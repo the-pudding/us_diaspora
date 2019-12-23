@@ -1,0 +1,51 @@
+<div class='unexpected__container'>
+    <section class='short-story story-{{doc.country_1_name}}'>
+        <div class='short-story__header header-{{doc.country_1_name}}'>
+            <p class='em-dash-border'>—</p>
+            <p class='short-story__title title-{{doc.country_1_name}}'>{{doc.country_1_name}}</p>
+        </div>
+        <div class='short-story__map-container' id='map-{{doc.country_1_id}}'></div>
+        <div class='short-story__intro'>
+            {{#each doc.country_detail_1}}
+            <p class='story-text'>{{{value}}}</p>
+            {{/each}}</div>
+    </section>
+
+
+    <section class='short-story story-{{doc.country_2_name}}'>
+        <div class='short-story__header header-{{doc.country_2_name}}'>
+            <p class='em-dash-border'>—</p>
+            <p class='short-story__title title-{{doc.country_2_name}}'>{{doc.country_2_name}}</p>
+        </div>
+        <div class='short-story__map-container' id='map-{{doc.country_2_id}}'></div>
+        <div class='short-story__intro'>
+            {{#each doc.country_detail_2}}
+            <p class='story-text'>{{{value}}}</p>
+            {{/each}}</div>
+    </section>
+
+
+    <section class='short-story story-{{doc.country_3_name}}'>
+        <div class='short-story__header header-{{doc.country_3_name}}'>
+            <p class='em-dash-border'>—</p>
+            <p class='short-story__title title-{{doc.country_3_name}}'>{{doc.country_3_name}}</p>
+        </div>
+        <div class='short-story__map-container' id='map-{{doc.country_3_id}}'></div>
+        <div class='short-story__intro'>
+            {{#each doc.country_detail_3}}
+            <p class='story-text'>{{{value}}}</p>
+            {{/each}}</div>
+    </section>
+
+    <section class='short-story story-{{doc.country_4_name}}'>
+        <div class='short-story__header header-{{doc.country_4_name}}'>
+            <p class='em-dash-border'>—</p>
+            <p class='short-story__title title-{{doc.country_4_name}}'>{{doc.country_4_name}}</p>
+        </div>
+        <div class='short-story__map-container' id='map-{{doc.country_4_id}}'></div>
+        <div class='short-story__intro'>
+            {{#each doc.country_detail_4}}
+            <p class='story-text'>{{{value}}}</p>
+            {{/each}}</div>
+    </section>
+</div>

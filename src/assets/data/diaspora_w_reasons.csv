@@ -1,0 +1,187 @@
+X,Y,PUMA,Name,birthplace,reason_num,reason
+-117.1876198,33.02774795,7309,San Diego County (West)--San Diego (Northwest/San Dieguito) & Encinitas Cities PUMA,Denmark,4,family/community based migration pattern leading to concentration in a particular place
+-116.96021,32.81589522,7313,San Diego County (Central)--El Cajon & Santee Cities PUMA,Iraq,2,political instability in country of origin
+-117.1690531,32.80502772,7315,San Diego County (West Central)--San Diego City (Central/Clairemont & Kearny Mesa) PUMA,Kuwait,2,political instability in country of origin
+-121.9541473,37.37408123,8503,Santa Clara County (Northwest)--San Jose (Northwest) & Santa Clara Cities PUMA,India,3,economic/educational opportunity pull factor
+-122.4794431,37.75332506,7505,San Francisco County (Central)--Sunset District (North) PUMA,Hong Kong,#N/A,#N/A
+-122.4104567,37.80236867,7502,San Francisco County (North & East)--North Beach & Chinatown PUMA,Bermuda,,#N/A
+-121.3842753,38.51229025,6708,"Sacramento County--Sacramento City (Southeast/Fruitridge, Avondale & Depot Park) PUMA",Laos,2,political instability in country of origin
+-121.3842753,38.51229025,6708,"Sacramento County--Sacramento City (Southeast/Fruitridge, Avondale & Depot Park) PUMA",Thailand,2,political instability in country of origin
+-121.3813457,38.6518546,6704,"Sacramento County (North Central)--North Highlands, Foothill Farms & McClellan Park PUMA",Afghanistan,1,surprise! include annotation in narrative
+-121.4859621,38.48318724,6709,"Sacramento County--Sacramento City (Southwest/Pocket, Meadowview & North Laguna) PUMA",Fiji,3,economic/educational opportunity pull factor
+-117.7873294,33.59590727,5903,"Orange County (West Central)--Newport Beach, Aliso Viejo & Laguna Hills Cities PUMA",Netherlands,4,family/community based migration pattern leading to concentration in a particular place
+-98.44759797,29.36768598,5903,San Antonio City (Southeast)--Inside Loop I-410 PUMA,Netherlands,4,family/community based migration pattern leading to concentration in a particular place
+-117.8623352,33.73684212,5917,Orange County (Central)--Santa Ana City (East) PUMA,Mexico,4,family/community based migration pattern leading to concentration in a particular place
+-117.9433919,33.77776793,5913,Orange County (Northwest)--Garden Grove City (East) PUMA,Vietnam,1,surprise! include annotation in narrative
+-98.37471864,29.49523641,5913,"San Antonio (Northeast), Kirby & Windcrest Cities PUMA",Vietnam,1,surprise! include annotation in narrative
+-118.7200364,34.09076034,3726,"Los Angeles County--Calabasas, Agoura Hills, Malibu & Westlake Village Cities PUMA",Czechoslovakia,2,political instability in country of origin
+-117.1640155,33.49285727,6503,Riverside County (Southwest)--Temecula City PUMA,New Zealand,#N/A,#N/A
+-118.1677839,33.78769693,3769,Los Angeles County (Southeast)--Long Beach (Central) & Signal Hill Cities PUMA,Cambodia (Kampuchea),#N/A,#N/A
+-118.4798363,34.02018918,3728,Los Angeles County (Southwest)--Santa Monica City PUMA,England,,#N/A
+-118.338844,33.83924075,3761,Los Angeles County (South Central)--Torrance City PUMA,Japan,1,surprise! include annotation in narrative
+-118.2592423,33.83512093,3762,Los Angeles County (South Central)--Carson City PUMA,Philippines,3,economic/educational opportunity pull factor
+-118.297048,33.96847315,3750,Los Angeles County (South Central)--LA City (South Central/Westmont) PUMA,El Salvador,,#N/A
+-118.3460652,34.01521504,3747,Los Angeles County (Central)--LA City (Central/West Adams & Baldwin Hills) PUMA,Belize/British Honduras,#N/A,#N/A
+-118.2467671,34.18181555,3719,Los Angeles County (Central)--Glendale City PUMA,Armenia,1,surprise! include annotation in narrative
+-118.2467671,34.18181555,3719,Los Angeles County (Central)--Glendale City PUMA,Iran,2,political instability in country of origin
+-118.062819,34.12197967,3717,"Los Angeles County (East Central)--Arcadia, San Gabriel & Temple City Cities PUMA",Taiwan,4,family/community based migration pattern leading to concentration in a particular place
+-117.8595291,33.98288952,3714,"Los Angeles County--Diamond Bar, La Habra Heights (East) Cities & Rowland Heights PUMA",Indonesia,4,family/community based migration pattern leading to concentration in a particular place
+-118.1107393,34.05692232,3737,Los Angeles County (Central)--Monterey Park & Rosemead Cities PUMA,China,4,family/community based migration pattern leading to concentration in a particular place
+-118.2608427,34.08126971,3734,"Los Angeles County--LA City (East Central/Silver Lake, Echo Park & Westlake) PUMA",Guatemala,,#N/A
+-118.2965633,34.06181132,3733,Los Angeles County (Central)--LA City (Central/Koreatown) PUMA,Korea,4,family/community based migration pattern leading to concentration in a particular place
+-118.2965633,34.06181132,3733,Los Angeles County (Central)--LA City (Central/Koreatown) PUMA,Mongolia,3,economic/educational opportunity pull factor
+-122.172136,45.52403059,1316,Multnomah County (East)--Gresham & Troutdale Cities PUMA,Congo,2,political instability in country of origin
+-122.4113873,47.13435351,11504,"Pierce County (South Central)--Tacoma City (South), Parkland & Spanaway PUMA",Moldavia,3,economic/educational opportunity pull factor
+-122.4113873,47.13435351,11504,"Pierce County (South Central)--Tacoma City (South), Parkland & Spanaway PUMA",Northern Mariana Islands,#N/A,#N/A
+-122.4113873,47.13435351,11504,"Pierce County (South Central)--Tacoma City (South), Parkland & Spanaway PUMA","Samoa, 1940-1950",#N/A,#N/A
+-122.8287502,46.90599814,11402,Thurston County (Outer) PUMA,Germany,4,family/community based migration pattern leading to concentration in a particular place
+-122.1720473,47.2853455,11614,King County (Southwest)--Auburn City & Lakeland PUMA,Marshall Islands,#N/A,#N/A
+-122.3463132,47.5518681,11605,Seattle City (West)--Duwamish & Beacon Hill PUMA,Tunisia,3,economic/educational opportunity pull factor
+-122.7206147,47.51553691,11802,Kitsap County (South)--Bremerton & Port Orchard Cities PUMA,Guam,3,economic/educational opportunity pull factor
+-110.9684061,32.26404776,207,Tucson City (Northwest) PUMA,Micronesia,1,surprise! include annotation in narrative
+-112.4112015,33.45068946,132,"Maricopa County--Goodyear, Glendale (West) & Litchfield Park (Northwest) Cities PUMA",Singapore,3,economic/educational opportunity pull factor
+-112.0882926,33.62038913,115,Phoenix City (Northwest Central) PUMA,Ireland,4,family/community based migration pattern leading to concentration in a particular place
+-89.93130934,35.21118949,3203,Memphis (North) & Bartlett (Southwest) Cities PUMA,Lebanon,2,political instability in country of origin
+-88.08981751,41.77090503,3203,DuPage County (South Central)--Lisle Township PUMA,Lebanon,2,political instability in country of origin
+-83.23366176,42.31387644,3203,Wayne County (Central)--Dearborn & Dearborn Heights Cities PUMA,Lebanon,2,political instability in country of origin
+-73.49088313,40.76870104,3203,Nassau County (East Central)--Oyster Bay Town (Central) PUMA,Lebanon,2,political instability in country of origin
+-75.06038314,40.02035762,3203,Philadelphia City (Near Northeast-East) PUMA,Lebanon,2,political instability in country of origin
+-97.15276774,31.5496369,3801,Heart of Texas COG--McLennan County--Waco City (Central) PUMA,Dominican Republic,,#N/A
+-73.93072842,40.85604858,3801,"NYC-Manhattan Community District 12--Washington Heights, Inwood & Marble Hill PUMA",Dominican Republic,,#N/A
+-94.61369768,31.44679128,4000,Deep East Texas COG (Central)--Angelina & Nacogdoches Counties PUMA,Cape Verde,#N/A,#N/A
+-82.07355229,33.3596318,4000,Central Savannah River Area Regional Commission (East Central)--Richmond County PUMA,Cape Verde,#N/A,#N/A
+-71.05692897,42.10121075,4000,"Plymouth & Norfolk Counties--Brockton City, Stoughton & Avon Towns PUMA",Cape Verde,#N/A,#N/A
+-78.00422408,35.36368466,4000,Wayne County PUMA,Cape Verde,#N/A,#N/A
+-83.00477765,40.27836818,4000,Delaware County PUMA,Cape Verde,#N/A,#N/A
+-94.17375412,29.86537196,4302,Jefferson County (Outside Beaumont City)--Port Arthur City PUMA,Azores,1,surprise! include annotation in narrative
+-71.10910662,41.7197356,4302,Bristol County (Central)--Fall River City & Somerset Town PUMA,Azores,1,surprise! include annotation in narrative
+-97.46290183,32.78825345,2515,Tarrant County (West)--Fort Worth City (West) PUMA,Iceland,,#N/A
+-97.31732851,32.81182546,2512,Fort Worth City (North Central) & Haltom City (North)--Inside Loop I-820 PUMA,Eritrea,2,political instability in country of origin
+-97.20382525,32.79980992,2509,Fort Worth (Northeast) & Hurst (South) Cities--North of I-30 PUMA,"Africa, ns/nec",#N/A,#N/A
+-97.08580878,32.63974392,2504,Tarrant County (Southeast)--Arlington (Southeast) & Grand Prairie (Southwest) Cities PUMA,South Sudan,,#N/A
+-86.70574531,36.04628013,2504,Nashville-Davidson (Southeast) PUMA,South Sudan,,#N/A
+-96.97098062,32.86831325,2321,Dallas County (Northwest)--Irving (Central) & Dallas (Northwest) Cities PUMA,Nepal,1,surprise! include annotation in narrative
+-96.73302566,32.88901725,2307,Dallas City (Northeast)--East of US-75 PUMA,Burma (Myanmar),#N/A,#N/A
+-86.1926765,39.67515045,2307,Marion County--Perry & Decatur (South & East) Townships--Indianapolis City (South) PUMA,Burma (Myanmar),#N/A,#N/A
+-96.77768199,32.80640305,2313,Dallas City (Downtown)--North of I-30 PUMA,Sweden,4,family/community based migration pattern leading to concentration in a particular place
+-95.80394665,29.50576115,4905,Fort Bend County (West & South) PUMA,Norway,4,family/community based migration pattern leading to concentration in a particular place
+-95.50598684,29.75623793,4613,Houston (West) & Hunters Creek Village Cities--Between Loop I-610 & Beltway TX-8 PUMA,Morocco,3,economic/educational opportunity pull factor
+-95.60313048,29.81555387,4636,Houston City (West)--East of TX-6 & West of Beltway TX-8 PUMA,Cameroon,2,political instability in country of origin
+-95.60313048,29.81555387,4636,Houston City (West)--East of TX-6 & West of Beltway TX-8 PUMA,Rwanda,2,political instability in country of origin
+-95.60313048,29.81555387,4636,Houston City (West)--East of TX-6 & West of Beltway TX-8 PUMA,South Africa (Union of),#N/A,#N/A
+-95.59784547,29.72495192,4637,"Houston City (West)--Westpark Tollway, West of Beltway TX-8 PUMA",Antigua-Barbuda,#N/A,#N/A
+-95.59305086,30.08247991,4630,Harris County (Far North)--Tomball City & The Woodlands (Southwest) PUMA,Canada,,#N/A
+-95.51487146,29.6869791,4615,Houston (Southwest) & Bellaire (Southeast) Cities--Between Loop I-610 & Beltway TX-8 PUMA,"Americas, ns",#N/A,#N/A
+-95.59329071,29.67675788,4638,Houston City (Southwest)--East of TX-6 & West of Beltway TX-8 PUMA,Nigeria,,#N/A
+-95.39174734,29.62760327,4617,Houston City (South)--Between Loop I-610 & Beltway TX-8 PUMA,Finland,3,economic/educational opportunity pull factor
+-95.12189755,29.99982275,4624,Harris County (Northeast)--Houston City (Far Northeast) PUMA,Scotland,4,family/community based migration pattern leading to concentration in a particular place
+-95.00378315,29.81813128,4623,Harris County (East)--Baytown City PUMA,Dominica,,#N/A
+-82.76813722,27.96386667,10303,Pinellas County (Central)--Clearwater City (South & Central) PUMA,Greece,1,surprise! include annotation in narrative
+-81.07285559,28.52396552,9510,Orange County (Northeast) PUMA,"Caribbean, ns",#N/A,#N/A
+-81.34101336,28.53777985,9505,Orange County (Central)--Orlando City (East Downtown) & Azalea Park PUMA,Zambia,,#N/A
+-81.37801212,28.60407705,9507,"Orange County (North Central)--Orlando (North), Winter Park & Maitland Cities PUMA",Czech Republic,#N/A,#N/A
+-81.43760968,28.53746834,9506,Orange County (Central)--Orlando City (West Downtown) & Pine Hills (Southeast) PUMA,U.S. Virgin Islands,#N/A,#N/A
+-81.43760968,28.53746834,9506,Orange County (Central)--Orlando City (West Downtown) & Pine Hills (Southeast) PUMA,Yugoslavia,,#N/A
+-80.17203912,25.93765574,8603,Miami-Dade County (Northeast)--Greater North Miami Beach City (West) PUMA,St. Kitts-Nevis,#N/A,#N/A
+-80.2026339,25.73125943,8614,Miami-Dade County (East)--Miami City (East) & Key Biscayne Village PUMA,Spain,4,family/community based migration pattern leading to concentration in a particular place
+-80.15333091,25.82848972,8612,Miami-Dade County (Northeast)--Miami Beach City & Miami Shores Village PUMA,Belgium,,#N/A
+-80.13886243,25.92874977,8604,Miami-Dade County (Northeast)--Aventura City & Surfside Town PUMA,Argentina,2,political instability in country of origin
+-80.13886243,25.92874977,8604,Miami-Dade County (Northeast)--Aventura City & Surfside Town PUMA,Israel/Palestine,#N/A,#N/A
+-80.31769239,25.88445674,8607,Miami-Dade County (Northeast)--Hialeah City (North Central) PUMA,Uruguay,3,economic/educational opportunity pull factor
+-80.2891986,25.85514518,8609,Miami-Dade County (Northeast)--Hialeah City (South Central) PUMA,Cuba,4,family/community based migration pattern leading to concentration in a particular place
+-80.36214123,25.69728362,8620,"Miami-Dade County (East Central)--Kendall (North), Sunset & Westwood Lakes PUMA",Switzerland,3,economic/educational opportunity pull factor
+-80.26198875,25.77218347,8615,Miami-Dade County (East Central)--Miami City (West) PUMA,Costa Rica,#N/A,#N/A
+-80.35790233,25.92755844,8601,Miami-Dade County (North Central)--Greater Miami Lakes Town PUMA,Colombia,,#N/A
+-80.41191274,25.83553097,8608,"Miami-Dade County (North Central)--Doral, Sweetwater Cities & Fontainebleau PUMA",Venezuela,2,political instability in country of origin
+-80.44853698,25.69997699,8619,Miami-Dade County (Central)--Kendale Lakes (Southwest) & Kendall West (South) PUMA,Chile,,#N/A
+-80.45051796,25.64248817,8621,"Miami-Dade County (Central)--The Hammocks (West), Richmond West (West) & Country Walk PUMA",Peru,3,economic/educational opportunity pull factor
+-80.20307724,25.90683898,8605,Miami-Dade County--North Miami City (Southwest) & Golden Glades (West) PUMA,Bahamas,1,surprise! include annotation in narrative
+-80.20307724,25.90683898,8605,Miami-Dade County--North Miami City (Southwest) & Golden Glades (West) PUMA,Haiti,4,family/community based migration pattern leading to concentration in a particular place
+-80.21075097,25.78319433,8613,Miami-Dade County (Northeast Central)--Miami City (Downtown) PUMA,Honduras,3,economic/educational opportunity pull factor
+-80.21075097,25.78319433,8613,Miami-Dade County (Northeast Central)--Miami City (Downtown) PUMA,Nicaragua,2,political instability in country of origin
+-84.19368096,33.53373959,6002,Atlanta Regional Commission (Southeast)--Henry County (North)--Stockbridge City PUMA,"South America, ns",#N/A,#N/A
+-104.3055085,39.89989954,824,DRCOG East Plains--Arapahoe (East) & Adams (East) Counties--Aurora City (Northeast) PUMA,Zimbabwe,2,political instability in country of origin
+-87.83722459,41.77473968,3409,Cook County (West Central)--Lyons & Stickney Townships PUMA,"Asia, nec/ns",#N/A,#N/A
+-87.86209533,41.86386355,3407,"Cook County (West Central)--Proviso, Riverside & River Forest Townships PUMA",Kosovo,2,political instability in country of origin
+-87.86944805,41.95214065,3422,"Cook County (West)--Leyden, Norwood Park (South) Townships & Chicago City--O'Hare PUMA",Poland,4,family/community based migration pattern leading to concentration in a particular place
+-87.78107102,41.95700984,3520,"Chicago City (Northwest)--Portage Park, Dunning & Jefferson Park PUMA",Algeria,3,economic/educational opportunity pull factor
+-87.97600493,42.03826417,3419,Cook County (Northwest)--Elk Grove & Wheeling (Southwest) Townships PUMA,Bulgaria,1,surprise! include annotation in narrative
+-87.879756,41.65006284,3410,"Cook County (Southwest)--Orland (West & Central), Palos & Lemont Townships PUMA",Jordan,4,family/community based migration pattern leading to concentration in a particular place
+-87.879756,41.65006284,3410,"Cook County (Southwest)--Orland (West & Central), Palos & Lemont Townships PUMA",Lithuania,4,family/community based migration pattern leading to concentration in a particular place
+-87.6276247,41.88167083,3525,"Chicago City (Central)--Near North Side, Loop & Near South Side PUMA",Austria,3,economic/educational opportunity pull factor
+-93.35025678,45.02902493,1404,"Hennepin County--Brooklyn Center, Golden Valley, New Hope & Robbinsdale Cities PUMA",Liberia,,#N/A
+-74.3056851,40.77845161,1404,Essex County (Southwest) PUMA,Liberia,,#N/A
+-93.45979966,44.88536751,1409,Hennepin County--Eden Prairie & Minnetonka Cities PUMA,"Europe, ns.",#N/A,#N/A
+-93.45979966,44.88536751,1409,Hennepin County--Eden Prairie & Minnetonka Cities PUMA,Libya,2,political instability in country of origin
+-93.23854115,44.92918302,1406,Hennepin County--Minneapolis City (Southeast) PUMA,Kenya,2,political instability in country of origin
+-93.23854115,44.92918302,1406,Hennepin County--Minneapolis City (Southeast) PUMA,Somalia,2,political instability in country of origin
+-93.26528325,45.00672115,1405,Hennepin County--Minneapolis (North) & St. Anthony Cities PUMA,Northern Ireland,#N/A,#N/A
+-93.38821793,45.11340783,1403,"Hennepin County--Brooklyn Park, Maple Grove (East) & Osseo Cities PUMA",Guinea,2,political instability in country of origin
+-93.38821793,45.11340783,1403,"Hennepin County--Brooklyn Park, Maple Grove (East) & Osseo Cities PUMA",Sierra Leone,#N/A,#N/A
+-74.26351572,40.85260565,1403,Essex County (Northwest) PUMA,Guinea,2,political instability in country of origin
+-74.26351572,40.85260565,1403,Essex County (Northwest) PUMA,Sierra Leone,#N/A,#N/A
+-93.29762166,44.8431507,1410,Hennepin County--Bloomington & Richfield Cities PUMA,Togo,3,economic/educational opportunity pull factor
+-90.34502726,38.55647147,1807,St. Louis County (Inner Ring South) PUMA,Bosnia,4,family/community based migration pattern leading to concentration in a particular place
+-80.04104021,40.32376515,1807,Allegheny County (South)--Bethel Park Municipality & Jefferson Hills Borough PUMA,Bosnia,4,family/community based migration pattern leading to concentration in a particular place
+-111.954118,40.15335845,49001,"Utah County (West)--Saratoga Springs, Payson & Lehi (Southwest) Cities PUMA",Other n.e.c.,#N/A,#N/A
+-111.994887,40.7041746,35003,"Salt Lake County--West Valley City (Central), Salt Lake City (South Central) & Kearns PUMA",Tanzania,2,political instability in country of origin
+-111.994887,40.7041746,35003,"Salt Lake County--West Valley City (Central), Salt Lake City (South Central) & Kearns PUMA",Tonga,1,surprise! include annotation in narrative
+-111.7878182,40.67673989,35005,"Salt Lake County (East Central)--Murray (East), Holladay Cities & Millcreek PUMA",Bhutan,2,political instability in country of origin
+-112.0886565,40.75686235,35001,"Salt Lake County (Northwest)--Salt Lake City (West), West Valley City (West) & Magna PUMA",American Samoa,#N/A,#N/A
+-112.0886565,40.75686235,35001,"Salt Lake County (Northwest)--Salt Lake City (West), West Valley City (West) & Magna PUMA",Croatia,2,political instability in country of origin
+-87.95659208,43.02105631,41004,Milwaukee City (South Central) PUMA,Malaysia,2,political instability in country of origin
+-87.92180279,43.13654038,40101,Milwaukee County (Northeast) PUMA,Saudi Arabia,#N/A,#N/A
+-85.64536998,38.13480592,1705,KIPDA Area Development District (West)--Louisville/Jefferson County (South Central) PUMA,Gambia,2,political instability in country of origin
+-71.08979116,42.42602627,508,Middlesex County (East)--Malden & Medford Cities PUMA,Brazil,2,political instability in country of origin
+-71.08979116,42.42602627,508,Middlesex County (East)--Malden & Medford Cities PUMA,Uganda,3,economic/educational opportunity pull factor
+-71.12684677,41.91623375,4303,"Bristol County--Taunton City, Mansfield, Norton, Raynam, Dighton & Berkley Towns PUMA",Portugal,1,surprise! include annotation in narrative
+-82.96745477,42.40810988,3213,Wayne County (Northeast)--I-94 Corridor PUMA,Yemen Arab Republic (North),#N/A,#N/A
+-74.00722727,40.71737852,3810,"NYC-Manhattan Community District 1 & 2--Battery Park City, Greenwich Village & Soho PUMA","United Kingdom, ns",#N/A,#N/A
+-73.99214033,40.75402032,3807,"NYC-Manhattan Community District 4 & 5--Chelsea, Clinton & Midtown Business District PUMA",Australia,,#N/A
+-73.94445448,40.81337415,3803,NYC-Manhattan Community District 10--Central Harlem PUMA,Senegal,3,economic/educational opportunity pull factor
+-73.94445448,40.81337415,3803,NYC-Manhattan Community District 10--Central Harlem PUMA,"Western Africa, ns",#N/A,#N/A
+-73.95559802,40.7714958,3805,NYC-Manhattan Community District 8--Upper East Side PUMA,Romania,4,family/community based migration pattern leading to concentration in a particular place
+-73.97507924,40.74534861,3808,"NYC-Manhattan Community District 6--Murray Hill, Gramercy & Stuyvesant Town PUMA",France,3,economic/educational opportunity pull factor
+-74.18713454,40.54481658,3901,"NYC-Staten Island Community District 3--Tottenville, Great Kills & Annadale PUMA",Italy,4,family/community based migration pattern leading to concentration in a particular place
+-74.13372779,40.5936278,3902,NYC-Staten Island Community District 2--New Springville & South Beach PUMA,Albania,2,political instability in country of origin
+-74.13372779,40.5936278,3902,NYC-Staten Island Community District 2--New Springville & South Beach PUMA,Macedonia,3,economic/educational opportunity pull factor
+-74.13372779,40.5936278,3902,NYC-Staten Island Community District 2--New Springville & South Beach PUMA,Montenegro,4,family/community based migration pattern leading to concentration in a particular place
+-74.11905657,40.627007,3903,"NYC-Staten Island Community District 1--Port Richmond, Stapleton & Mariner's Harbor PUMA",Sri Lanka (Ceylon),#N/A,#N/A
+-73.98098048,40.58147836,4018,NYC-Brooklyn Community District 13--Brighton Beach & Coney Island PUMA,Azerbaijan,2,political instability in country of origin
+-73.98098048,40.58147836,4018,NYC-Brooklyn Community District 13--Brighton Beach & Coney Island PUMA,Byelorussia,2,political instability in country of origin
+-73.98098048,40.58147836,4018,NYC-Brooklyn Community District 13--Brighton Beach & Coney Island PUMA,Other USSR/Russia,#N/A,#N/A
+-73.98098048,40.58147836,4018,NYC-Brooklyn Community District 13--Brighton Beach & Coney Island PUMA,"USSR, ns",#N/A,#N/A
+-73.98098048,40.58147836,4018,NYC-Brooklyn Community District 13--Brighton Beach & Coney Island PUMA,Ukraine,4,family/community based migration pattern leading to concentration in a particular place
+-73.98098048,40.58147836,4018,NYC-Brooklyn Community District 13--Brighton Beach & Coney Island PUMA,Uzbekistan,4,family/community based migration pattern leading to concentration in a particular place
+-73.89968091,40.61578465,4009,NYC-Brooklyn Community District 18--Canarsie & Flatlands PUMA,"West Indies, ns",#N/A,#N/A
+-73.94869071,40.59495289,4016,"NYC-Brooklyn Community District 15--Sheepshead Bay, Gerritsen Beach & Homecrest PUMA",Kazakhstan,3,economic/educational opportunity pull factor
+-73.94869071,40.59495289,4016,"NYC-Brooklyn Community District 15--Sheepshead Bay, Gerritsen Beach & Homecrest PUMA",Kirghizia,3,economic/educational opportunity pull factor
+-73.94869071,40.59495289,4016,"NYC-Brooklyn Community District 15--Sheepshead Bay, Gerritsen Beach & Homecrest PUMA",Latvia,4,family/community based migration pattern leading to concentration in a particular place
+-73.99368607,40.60687384,4017,NYC-Brooklyn Community District 11--Bensonhurst & Bath Beach PUMA,Egypt/United Arab Rep.,#N/A,#N/A
+-73.99368607,40.60687384,4017,NYC-Brooklyn Community District 11--Bensonhurst & Bath Beach PUMA,Republic of Georgia,#N/A,#N/A
+-73.98268237,40.62993092,4014,"NYC-Brooklyn Community District 12--Borough Park, Kensington & Ocean Parkway PUMA",Hungary,4,family/community based migration pattern leading to concentration in a particular place
+-73.94788829,40.66135946,4011,"NYC-Brooklyn Community District 9--Crown Heights South, Prospect Lefferts & Wingate PUMA",Panama,3,economic/educational opportunity pull factor
+-73.93430307,40.64767716,4010,"NYC-Brooklyn Community District 17--East Flatbush, Farragut & Rugby PUMA",Barbados,3,economic/educational opportunity pull factor
+-73.93430307,40.64767716,4010,"NYC-Brooklyn Community District 17--East Flatbush, Farragut & Rugby PUMA",Grenada,3,economic/educational opportunity pull factor
+-73.93430307,40.64767716,4010,"NYC-Brooklyn Community District 17--East Flatbush, Farragut & Rugby PUMA",Jamaica,4,family/community based migration pattern leading to concentration in a particular place
+-73.93430307,40.64767716,4010,"NYC-Brooklyn Community District 17--East Flatbush, Farragut & Rugby PUMA",St. Lucia,#N/A,#N/A
+-73.93430307,40.64767716,4010,"NYC-Brooklyn Community District 17--East Flatbush, Farragut & Rugby PUMA",St. Vincent,#N/A,#N/A
+-73.93430307,40.64767716,4010,"NYC-Brooklyn Community District 17--East Flatbush, Farragut & Rugby PUMA",Trinidad and Tobago,#N/A,#N/A
+-73.85512364,40.74062857,4107,NYC-Queens Community District 4--Elmhurst & South Corona PUMA,Ecuador,1,surprise! include annotation in narrative
+-82.93035383,39.95658254,4107,"Columbus (East), Whitehall & Bexley Cities PUMA",Ecuador,1,surprise! include annotation in narrative
+-73.77865826,40.691635,4112,"NYC-Queens Community District 12--Jamaica, Hollis & St. Albans PUMA",Bangladesh,3,economic/educational opportunity pull factor
+-73.83300003,40.66940403,4113,NYC-Queens Community District 10--Howard Beach & Ozone Park PUMA,Guyana/British Guiana,#N/A,#N/A
+-84.40846955,39.38011918,5401,Butler County (Southeast)--Monroe City & Beckett Ridge PUMA,"Eastern Africa, nec/ns",#N/A,#N/A
+-75.47554739,40.596099,2803,Allentown City PUMA,Puerto Rico,#N/A,#N/A
+-75.47554739,40.596099,2803,Allentown City PUMA,Syria,2,political instability in country of origin
+-76.87261529,36.75260463,51145,"Isle of Wight, Southampton Counties, Suffolk & Franklin Cities PUMA",United Arab Emirates,#N/A,#N/A
+-78.8754839,38.51045278,51110,Central Shenandoah Planning District Commission (Northeast) PUMA,Zaire,2,political instability in country of origin
+-77.17558586,38.83756825,59301,"Fairfax County (East Central)--Annandale, West Falls Church & Bailey's Crossroads PUMA",Bolivia,4,family/community based migration pattern leading to concentration in a particular place
+-76.34939533,36.8462944,51155,Portsmouth & Norfolk (Southwest) Cities PUMA,Slovakia,4,family/community based migration pattern leading to concentration in a particular place
+-77.08679233,38.81874076,51255,Alexandria City PUMA,Ethiopia,2,political instability in country of origin
+-77.08679233,38.81874076,51255,Alexandria City PUMA,Ivory Coast,#N/A,#N/A
+-77.32002917,38.62273441,51246,"Prince William County (Southeast)--Dale City, Lake Ridge & Woodbridge PUMA",Ghana,2,political instability in country of origin
+-76.02815147,36.6941673,51167,Virginia Beach City (South) PUMA,Turkey,3,economic/educational opportunity pull factor
+-77.37545017,38.94497762,59307,Fairfax County (Northwest)--Reston (North) & Franklin Farm PUMA,Sudan,2,political instability in country of origin
+-77.45280598,38.85627263,59309,Fairfax County (West Central)--Centreville (North & West) & Chantilly (South & West) PUMA,Pakistan,4,family/community based migration pattern leading to concentration in a particular place
+-116.4454947,33.62755097,6515,"Riverside County--Palm Desert, La Quinta (West) & Desert Hot Springs Cities PUMA",Paraguay,3,economic/educational opportunity pull factor

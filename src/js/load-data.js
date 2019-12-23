@@ -1,33 +1,23 @@
 /* global d3 */
 /* usage
 	import loadData from './load-data'
-	
-	loadData('file.csv').then(result => {
-		console.log(result);
-	}).catch(console.error);
+	loadData().then(result => {
 
-	loadData(['file1.csv', 'file2.json]).then(result => {
-		console.log(result);
-	}).catch(console.error);
+	}).catch(console.error)
 */
 
-function loadFile(file) {
+function loadA(file) {
   return new Promise((resolve, reject) => {
-    const ext = file.split('.').pop();
-    if (ext === 'csv')
-      d3.csv(`assets/data/${file}`)
-        .then(resolve)
-        .catch(reject);
-    else if (ext === 'json')
-      d3.json(`assets/data/${file}`)
-        .then(resolve)
-        .catch(reject);
-    else reject(new Error(`unsupported file type for: ${file}`));
+    d3.csv(`assets/data/${file}`)
+      .then(result => {
+        // clean here
+        resolve(result);
+      })
+      .catch(reject);
   });
 }
 
-export default function loadData(files) {
-  if (typeof files === 'string') return loadFile(files);
-  const loads = files.map(loadFile);
+export default function loadData() {
+  const loads = [loadA('filename.csv')];
   return Promise.all(loads);
 }

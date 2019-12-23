@@ -2,32 +2,40 @@
 <html lang='en' data-version='{{timestamp}}'>
 
 <head>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.css' rel='stylesheet' />
+    {{> base/meta}}
+    <link inline rel='stylesheet' href='bundle.css' />
+    {{> base/font}}
 
-	{{> base/meta}}
 
-	<link inline rel='stylesheet' href='bundle.css' />
+    <script inline src='head.js'></script>
 
-	{{> base/font}}
-
-	{{> base/analytics }}
+    {{!-- {{> base/analytics }} --}}
 
 </head>
 
 <body>
 
-	{{> base/header 'sticky'}}
+    {{!-- {{> base/header 'sticky'}} --}}
 
-	<main id='content'>
+    <main id='content'>
 
-		{{> story/intro }}
+        {{> story/intro }}
+        {{> story/main }}
 
-	</main>
+        {{!-- {{> base/guide }} --}}
 
-	{{> base/footer }}
+    </main>
+
+    {{!-- {{> base/footer }} --}}
 
 
-	<script src='{{basepath}}assets/scripts/d3.v5.12.0.min.js'></script>
-	<script src='main.js?version={{timestamp}}' async></script>
+    <script src='{{basepath}}assets/scripts/d3.v5.9.1.min.js'></script>
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.js'></script>
+    {{!-- <script src='https://npmcdn.com/@turf/turf/turf.min.js'></script> --}}
+    {{!-- <script src='https://cdn.jsdelivr.net/npm/@turf/turf@5/turf.min.js'></script> --}}
+    <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/turf/v2.0.0/turf.min.js'></script>
+    <script src='main.js?version={{timestamp}}' async></script>
 </body>
 
 </html>

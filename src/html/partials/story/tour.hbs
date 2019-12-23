@@ -1,0 +1,17 @@
+<section class='tour'>
+    <div class='tour__step-container'>
+        {{!-- {{#each doc.tour}}
+        <div class='tour-step'>
+            <p class='tour-text'>{{{value}}}</p>
+        </div>
+        {{/each}} --}}
+
+        {{#each doc.tour}}
+        <div class='tour-step' data-step='{{{data-step}}}' data-previous-step='{{{data-previous-step}}}'>
+            <p class='tour-text'>{{{text}}}</p>
+        </div>
+        {{/each}}
+
+    </div>
+    <div class='tour__map' id='map-tour'></div>
+</section>

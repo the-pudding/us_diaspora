@@ -11,9 +11,10 @@ function resize() {
   // only do resize on width changes, not height
   // (remove the conditional if you want to trigger on height change)
   const width = $body.node().offsetWidth;
+
   if (previousWidth !== width) {
     previousWidth = width;
-    graphic.resize();
+    graphic.resize(width);
   }
 }
 
@@ -36,7 +37,7 @@ function init() {
   // setup resize event
   window.addEventListener('resize', debounce(resize, 150));
   // setup sticky header menu
-  setupStickyHeader();
+  //   setupStickyHeader();
   // kick off graphic code
   graphic.init();
   // load footer stories
