@@ -1,16 +1,22 @@
 {
-	"title": "Title Case Hed Goes Here",
-	"description": "Sentence case dek goes down here. Modify these in data/meta.json.",
+    "title": "The United States of",
+    "countryTitle": "CANADA",
+	"description": "Americans are a nation of immigrants.",
 	"site": "https://pudding.cool",
 	"siteName": "The Pudding",
-	"url": "https://pudding.cool/year/month/name/",
-	"keywords": "tk",
+	"url": "https://pudding.cool/2019/09/diaspora/",
+	"keywords": "diaspora immigration pudding data visualization",
 	"imgFacebook": "https://pudding.cool/year/month/name/assets/social/social-facebook.jpg",
 	"imgTwitter": "https://pudding.cool/year/month/name/assets/social/social-twitter.jpg",
-	"author": {
-		"name": "The Pudding",
-		"url": "https://pudding.cool/author/the-pudding-team",
-		"twitterHandle": "@puddingviz"
+	"author1": {
+		"name": "Ilia Blinderman",
+		"url": "https://pudding.cool/author/ilia-blinderman",
+		"twitterHandle": "@iliablinderman"
+    },	
+    "author2": {
+		"name": "Isabel Carter",
+		"url": "https://pudding.cool/author/isabel-carter",
+		"twitterHandle": "@isabel___carter"
 	},
 	"analytics": "",
 	"lorem": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mollis neque sit amet sollicitudin vehicula. Maecenas fringilla mi non lacus mattis elementum. Curabitur dignissim faucibus justo."
