@@ -32,44 +32,50 @@
                 </g>
             </svg></a></div>
 
-
-    <div class='intro__cover-left'>
-        <div class='cover__top'></div>
+    <div class='intro__cover-viz' id='map-intro'></div>
+    <div class='intro__cover-text'>
+        {{!-- <div class='cover__top'></div> --}}
 
         <div class='cover__middle'>
-            <div class='blurb-container'>
-                <div class='blurb-text'>America has long been called a nation of immigrants.</div>
-                <div class='blurb-text'>Here is where those of us from</div>
-                <div class='blurb-text'>
-                    <span class='subhed-country'></span>
-                    find our home.
-                </div>
+
+            <div class='title'>
+                <div class='country-title__prefix'>The United States of</div>
+                <div class='country-title__suffix'>Canada</div>
+                <p class='intro__byline'>By
+                    <a href='{{meta.author1.url}}' target='_blank'>
+                        <strong>{{meta.author1.name}}</strong>
+                    </a> and
+                    <a href='{{meta.author2.url}}' target='_blank'>
+                        <strong>{{meta.author2.name}}</strong>
+                    </a>
+                </p>
+
             </div>
-        </div>
 
-        <div class='cover__bottom'>
-            <div class='country-title__prefix'>The United States of</div>
-            <div class='country-title__suffix'>Canada</div>
-            <p class='intro__byline'>By
-                <a href='{{meta.author1.url}}' target='_blank'>
-                    <strong>{{meta.author1.name}}</strong>
-                </a> and
-                <a href='{{meta.author2.url}}' target='_blank'>
-                    <strong>{{meta.author2.name}}</strong>
-                </a>
-            </p>
+            {{!-- <div class='blurb-container'>
+                <div class='blurb-text'>America has long been called a nation of immigrants.</div>
+                <div class='blurb-text'>Here is where those of us </div>
+                <div class='blurb-text'>
+                    <span class='subhed-country'>Canada</span>
+                    call our home.
+                </div>
+            </div> --}}
         </div>
 
 
 
+
+
+    </div>
+    <div class='intro__scroll-cue'>
+        <div class='scroll-cue-text'>⇩ Scroll ⇩</div>
     </div>
 
-    <div class='intro__cover-right' id='map-intro'>
-    </div>
+
 
 </div>
-<div class='intro__copy-container'>
+{{!-- <div class='intro__copy-container'>
     {{#each doc.intro}}
     <p class='intro-text'>{{{value}}}</p>
     {{/each}}
-</div>
+</div> --}}

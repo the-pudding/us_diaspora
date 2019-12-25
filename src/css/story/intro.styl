@@ -1,29 +1,65 @@
 .intro
     display flex
-    flex-direction: row
+    flex-direction: column
     height 100vh
     width 100%
     background-color: $thisBlue
+    position: fixed
+
+    &__scroll-cue
+        position: absolute
+        width 100%
+        bottom: 3%
+        z-index: 1
+
+        .scroll-cue-text
+            -webkit-animation-name: Floatingx;
+            -webkit-animation-duration: 3s;
+            -webkit-animation-iteration-count: infinite;
+            -webkit-animation-timing-function: ease-in-out;
+            -moz-animation-name: Floating;
+            -moz-animation-duration: 3s;
+            -moz-animation-iteration-count: infinite;
+            -moz-animation-timing-function: ease-in-out;
+            text-align: center
+            font-family: $national
+            color: white
+            text-transform: uppercase
+            text-shadow: 0px 3px 3px #000
+            font-weight: 600
+            // margin-left: 30px;
+            // margin-top: 5px;
+
+
+
 
     &__byline
         text-align: right
         font-family $national
         color white 
+        visibility hidden
 
         a
             color white
             text-decoration underline white
 
 
-    &__cover-left
-        height 100vh
-        display flex
-        flex-direction: column
-        width 50%
-        padding-right 2rem
+    &__cover-text
+        height 20vh
+        position absolute
+        bottom 0
+        background-color: $thisBlue
+        width 100%
+        transition: transform 0.35s ease-out;
+        z-index: 5
+        // display flex
+        // flex-direction: column
+        // width 100%
+        // padding-right 2rem
     
-    &__cover-right
-        width 50%
+    &__cover-viz
+        width 100%
+        height 100vh
         pointer-events: none
 
     &__copy-container
@@ -34,12 +70,27 @@
             font-family $national
             color white  
 
+
+@-webkit-keyframes Floatingx{
+    from {-webkit-transform:translate(0, 0px);}
+    65% {-webkit-transform:translate(0, 15px);}
+    to {-webkit-transform: translate(0, -0px);    }    
+}
+    
+@-moz-keyframes Floating{
+    from {-moz-transform:translate(0, 0px);}
+    65% {-moz-transform:translate(0, 15px);}
+    to {-moz-transform: translate(0, -0px);}    
+} 
+
+
 .masthead
     z-index: 1000;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
+    transition: transform 0.35s ease-out;
 
     a
         display: block;
@@ -54,28 +105,31 @@
         width: 100%;
 
 .cover
-    &__top
-        height 33vh
+    // &__top
+    //     height 33vh
 
     &__middle    
-        height 33vh
+        // height 33vh
+        height 100%
         display: flex
-        flex-direction: column
-        justify-content: flex-end
+        flex-direction: row
+        justify-content: flex-start
+        padding-top 1rem
+        padding-right: 1rem;
 
-    &__bottom     
-        height 33vh
+    // &__bottom     
+    //     height 33vh
 
 .country-title
     &__prefix
         font-size 48px
-        font-weight 800
+        // font-weight 800
         text-align right
         font-family: $national
         color white
 
     &__suffix    
-        font-size 96px
+        font-size 48px
         font-weight 800
         text-align right
         font-family $national
@@ -85,6 +139,9 @@
 
 .blurb-container
     margin-bottom: 5rem
+    display: flex
+    flex-direction: column
+    justify-content: space-between
     
 
 .blurb-text
@@ -92,6 +149,7 @@
     color white
     font-family: $national
     font-size: 24px
+    padding-bottom: 1rem
 
 .subhed-country    
     color: $thisPink
@@ -117,10 +175,16 @@
     height 500px
 
 .xxxxx-large
-    font-size 64px    
+    font-size 48px    
 
 .xxxxxx-large
-    font-size 96px
+    font-size 72px
+
+.slide-out-right
+    transform: translate(100%,0)
+
+.slide-out-left
+    transform: translate(-100%,0)
 
 // .intro
 //     display flex

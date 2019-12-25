@@ -25,41 +25,42 @@ let $mapEcuador;
 let data;
 let nestedData;
 
+let mapInterval;
 let expandedNav = false;
 let initialTime = 1
 
 // const height = window.innerHeight;
 
 const introCoords = {
-  'X1': -95.615632,
-  'Y1': 30.094774
+  'X1': -68.32792,
+  'Y1': 46.20214
 }
 
-const tongaCoords = {
-  'X2': -111.99184859446382,
-  'Y2': 40.69852553447012,
-  'X1': -175.196482,
-  'Y1': -21.200206
-};
-const ecuadorCoords = {
-  'X2': -73.86617173851454,
-  'Y2': 40.74069877883909,
-  'X1': -78.78488785454653,
-  'Y1': -1.4859650869146321
-};
-const bulgariaCoords = {
-  'X2': -87.9760049258716,
-  'Y2': 42.038264174921,
-  'X1': 25.120547279064226,
-  'Y1': 42.957556303399286
-};
+// const tongaCoords = {
+//   'X2': -111.99184859446382,
+//   'Y2': 40.69852553447012,
+//   'X1': -175.196482,
+//   'Y1': -21.200206
+// };
+// const ecuadorCoords = {
+//   'X2': -73.86617173851454,
+//   'Y2': 40.74069877883909,
+//   'X1': -78.78488785454653,
+//   'Y1': -1.4859650869146321
+// };
+// const bulgariaCoords = {
+//   'X2': -87.9760049258716,
+//   'Y2': 42.038264174921,
+//   'X1': 25.120547279064226,
+//   'Y1': 42.957556303399286
+// };
 
-const greeceCoords = {
-  'X2': -82.76700345733673,
-  'Y2': 27.972586791167004,
-  'X1': 22.368843,
-  'Y1': 38.969777
-}
+// const greeceCoords = {
+//   'X2': -82.76700345733673,
+//   'Y2': 27.972586791167004,
+//   'X1': 22.368843,
+//   'Y1': 38.969777
+// }
 
 function nestData(dataArg) {
   console.log(dataArg)
@@ -82,11 +83,11 @@ function nestData(dataArg) {
 function setupDOM() {
   $countryHeaderLarge = d3.select('.country-title__suffix')
   $countryHeaderSmall = d3.select('.subhed-country')
-  $mapTour = makeMaps.makeTourMap('tour')
+  //   $mapTour = makeMaps.makeTourMap('tour')
 
-  $mapTour.on('click', () => {
-    console.log($mapTour.getZoom())
-  })
+  //   $mapTour.on('click', () => {
+  //     console.log($mapTour.getZoom())
+  //   })
 
 
   d3.select('.explore__expand-tab').on('click', () => {
@@ -107,6 +108,27 @@ function setupDOM() {
   })
 
 
+  d3.select('.intro__cover-text').on('click', () => {
+    d3.select('.intro__cover-text').classed('slide-out-left', true)
+    d3.select('.masthead').classed('slide-out-right', true)
+    d3.select('html').classed('no-scroll', false)
+
+  })
+
+  d3.select('.tour-step').on('click', () => {
+    d3.select('.intro__cover-text').classed('slide-out-left', true)
+    d3.select('.masthead').classed('slide-out-right', true)
+    d3.select('html').classed('no-scroll', false)
+  })
+
+  document.addEventListener('click', function (e) {
+
+    e = e || window.event;
+    const target = e.target || e.srcElement,
+      text = target.textContent || target.innerText;
+    console.log(target)
+  }, false);
+
 
 
 
@@ -114,9 +136,9 @@ function setupDOM() {
 
 function titleCountryChange(name) {
   if (name.length > 7) {
-    $countryHeaderLarge.style('font-size', '64px')
+    $countryHeaderLarge.style('font-size', '48px')
   } else if (name.length <= 7) {
-    $countryHeaderLarge.style('font-size', '96px')
+    $countryHeaderLarge.style('font-size', '48px')
   }
 }
 
@@ -133,41 +155,44 @@ function animateIntro(rawData) {
   let i = 0;
 
   //   console.log(data)
+  $mapIntro.on('load', () => {
+
+    mapInterval = setInterval(function () {
+
+      const newNameRaw = data[i].birthplace;
+
+      $mapIntro.flyTo({
+        center: [
+          data[i].X,
+          data[i].Y
+        ],
+        speed: 0.8,
+        curve: 0.6, // change the speed at which it zooms out
+        // This can be any easing function: it takes a number between
+        // 0 and 1 and returns another number between 0 and 1.
+        //   easing: function (t) {
+        //     return t;
+        //   },
+        // this animation is considered essential with respect to prefers-reduced-motion
+        // essential: true
+      });
 
 
-  const mapInterval = setInterval(function () {
 
-    const newNameRaw = data[i].birthplace;
+      $countryHeaderLarge.text(`${newNameRaw.replace(/_/g, ' ')}`);
+      $countryHeaderSmall.text(`${newNameRaw.replace(/_/g, ' ')}`);
+      titleCountryChange(newNameRaw)
 
-    $mapIntro.flyTo({
-      center: [
-        data[i].X,
-        data[i].Y
-      ],
-      speed: 1,
-      curve: 0.8, // change the speed at which it zooms out
-      // This can be any easing function: it takes a number between
-      // 0 and 1 and returns another number between 0 and 1.
-      //   easing: function (t) {
-      //     return t;
-      //   },
-      // this animation is considered essential with respect to prefers-reduced-motion
-      essential: true
-    });
+      i++
+      if (i === data.length) {
+        i = 0
+      }
 
 
-
-    $countryHeaderLarge.text(`${newNameRaw.replace(/_/g, ' ')}`);
-    $countryHeaderSmall.text(`${newNameRaw.replace(/_/g, ' ')}`);
-    titleCountryChange(newNameRaw)
-
-    i++
-    if (i === data.length) {
-      i = 0
-    }
+    }, 6000);
+  })
 
 
-  }, 8000);
 
   //   d3.select('#map-intro').on('click', () => {
   //       clearInterval(mapInterval)
@@ -221,7 +246,7 @@ function updateMap(el) {
 
   function flyToCoords(currentStep) {
     const destination = tourCoordinates.filter(item => item.name === currentStep)[0]
-    $mapTour.flyTo({
+    $mapIntro.flyTo({
       center: [+destination.lon, +destination.lat],
       speed: 1,
       zoom: +destination.zoom
@@ -254,7 +279,7 @@ function updateMapBack(el) {
 
   function flyBackToCoords(prevStep) {
     const destination = tourCoordinates.filter(item => item.name === prevStep)[0]
-    $mapTour.flyTo({
+    $mapIntro.flyTo({
       center: [+destination.lon, +destination.lat],
       speed: 1,
       zoom: +destination.zoom
@@ -290,6 +315,38 @@ function updateMapBack(el) {
 
 
 function setupEnterView() {
+
+  //   enterView({
+  //     selector: '.tour',
+  //     enter(el) {
+
+  //     },
+  //     exit(el) {
+  //       //   d3.select('.intro__scroll-cue').classed('hidden', false)
+  //     },
+  //     progress(el, progress) {
+  //       //   el.style.opacity = progress;
+  //     },
+  //     offset: 0.1, // enter at middle of viewport
+  //     once: false, // trigger just once
+  //   });
+
+  window.onscroll = function () {
+    myFunction()
+  };
+
+  function myFunction() {
+    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+      d3.select('.intro__scroll-cue').classed('hidden', true)
+      clearInterval(mapInterval)
+      //   console.log('fifty')
+    } else {
+      //   console.log('less than fifty')
+      d3.select('.intro__scroll-cue').classed('hidden', false)
+    }
+  }
+
+
 
   enterView({
     selector: '.tour-step',
@@ -533,8 +590,8 @@ function init() {
     .then(data => makeUnexpectedMaps(data))
     .then(data => animateIntro(data))
     .then(data => nestData(data))
-    .then(() => $mapExplore = makeMaps.makeExploreMap('explore'))
-    .then(() => setupExploreMapInteraction())
+    // .then(() => $mapExplore = makeMaps.makeExploreMap('explore'))
+    // .then(() => setupExploreMapInteraction())
     .then(() => setupEnterView())
 }
 

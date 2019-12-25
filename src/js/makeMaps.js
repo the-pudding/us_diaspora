@@ -1,11 +1,11 @@
-function setupFlyover($mapUnexpected, mapCoordinates) {
-  $mapUnexpected.on('click', () => {
-    $mapUnexpected.flyTo({
-      center: [mapCoordinates.X2, mapCoordinates.Y2],
-      speed: 1.3
-    });
-  });
-}
+// function setupFlyover($mapUnexpected, mapCoordinates) {
+//   $mapUnexpected.on('click', () => {
+//     $mapUnexpected.flyTo({
+//       center: [mapCoordinates.X2, mapCoordinates.Y2],
+//       speed: 0.8
+//     });
+//   });
+// }
 
 function formatPUMA(puma) {
 
@@ -20,6 +20,8 @@ function formatPUMA(puma) {
 }
 
 function makeMapUnexpected(mapCoordinates, container, data) {
+
+  d3.select('html').classed('no-scroll', true)
 
   mapboxgl.accessToken =
     'pk.eyJ1IjoiZG9jazQyNDIiLCJhIjoiY2pjazE5eTM2NDl2aDJ3cDUyeDlsb292NiJ9.Jr__XbmAolbLyzPDj7-8kQ';
@@ -36,7 +38,7 @@ function makeMapUnexpected(mapCoordinates, container, data) {
     zoom: 11,
   });
 
-  if (container !== 'intro') setupFlyover($mapUnexpected, mapCoordinates);
+  //   if (container !== 'intro') setupFlyover($mapUnexpected, mapCoordinates);
 
   //   let popupUnexpected = new mapboxgl.Popup({
   //     closeButton: false,

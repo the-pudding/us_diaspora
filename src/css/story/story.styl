@@ -26,6 +26,7 @@ main
             color white
             font-size 16px
             font-family $national   
+        
     
     &__header
         .em-dash-border
@@ -51,20 +52,38 @@ main
     flex-direction: row
 
     &__step-container        
-        max-width: 30%
-        background-color: $thisBlue
+        // max-width: 30%
+        width 100%
+        background-color: rgba(255,0,0,0,0)
         position relative
+
+        .tour-step:first-child
+            .tour-text
+                visibility: hidden
+
 
         .tour-step
             height 100vh
             display: flex
+            max-width: 40rem
+            margin 0 auto
             // border-bottom: 1px blue solid
             // justify-content: center
             align-items: center
             font-family $national   
             color white
-            background-color: $thisBlue
+            background-color: rgba(255,0,0,0,0)
             padding 0 1.5rem
+
+            .tour-text
+                padding 1.5rem
+                background-color: $thisBlue
+                border-radius 4px
+                -webkit-box-shadow: 4px 4px 6px 0px rgba(14,14,14,0.75);
+                -moz-box-shadow: 4px 4px 6px 0px rgba(14,14,14,0.75);
+                box-shadow: 4px 4px 6px 0px rgba(14,14,14,0.75);
+            
+
 
 
     &__map
@@ -175,7 +194,7 @@ main
                 content: "";
                 position: absolute;
                 background-color: white;
-                transition: transform 0.25s ease-out;
+                transition: transform 0.5s ease-out;
             
             &:before
                 top: 15%;
@@ -197,30 +216,7 @@ main
                     transform: rotate(90deg);
                 
                 &:after
-                    transform: rotate(180deg);
-            // background white
-            // display table
-
-
-            // span
-            //     display table-cell
-            //     vertical-align middle
-            // border-top: 25px solid transparent;
-            // border-right: 50px solid #555;
-            // border-bottom: 25px solid transparent;
-
-
-        // .button-list:after
-        //     content: "";
-        //     position: absolute;
-        //     z-index: 1;
-        //     bottom: 0;
-        //     left: 0;
-        //     pointer-events: none;
-        //     background-image: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255, 1) 90%);
-        //     width: 100%;
-        //     height: 4em;
-        
+                    transform: rotate(180deg);        
  
 
     &__header
@@ -265,47 +261,13 @@ main
 .nbhd-subhed   
     font-size 14px 
 
-
-// .explore
-//     display flex
-//     flex-direction row
-
-//     &__nav-bar         
-//         flex-grow 1
-//         color white
-//         height 100vh
-        
-//         ul
-//             overflow hidden
-        
-//             li
-//                 overflow scroll
-    
-//     &__map-container 
-//         flex-grow: 4
-//         background-image url('assets/images/mainland_sun.png')
-//         background-repeat no-repeat
-//         background-size: contain;
-
-// .state
-//     fill-opacity 0
-//     stroke #000
+.no-scroll
+    overflow hidden
 
 
-// .explore
-//     &__title
-//         color $thisPink
-//         font-size 72px
-//         font-family: $national
-//         font-weight: 800
+.mapboxgl-ctrl-bottom-right,
+.mapboxgl-ctrl-bottom-left
+    visibility: hidden
 
-//     &__viz
-//         display: flex   
-//         flex-direction: row
-
-//     &__map-container
-//         width: 80vw
-//         height 80vh
-//         position: sticky
-//         top 0
-//         background-color: pink
+.hidden
+    visibility: hidden
