@@ -5,6 +5,16 @@
     width 100%
     background-color: $thisBlue
 
+    &__byline
+        text-align: right
+        font-family $national
+        color white 
+
+        a
+            color white
+            text-decoration underline white
+
+
     &__cover-left
         height 100vh
         display flex
@@ -14,6 +24,7 @@
     
     &__cover-right
         width 50%
+        pointer-events: none
 
     &__copy-container
         max-width 40rem

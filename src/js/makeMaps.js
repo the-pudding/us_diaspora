@@ -2,12 +2,25 @@ function setupFlyover($mapUnexpected, mapCoordinates) {
   $mapUnexpected.on('click', () => {
     $mapUnexpected.flyTo({
       center: [mapCoordinates.X2, mapCoordinates.Y2],
-      speed: 0.8,
+      speed: 1.3
     });
   });
 }
 
+function formatPUMA(puma) {
+
+  let name = puma;
+  if (puma.includes('--')) {
+    name = puma.split('--')[1].replace(' PUMA', '')
+  } else {
+    name = name.replace(' PUMA', '')
+  }
+  return name
+
+}
+
 function makeMapUnexpected(mapCoordinates, container, data) {
+
   mapboxgl.accessToken =
     'pk.eyJ1IjoiZG9jazQyNDIiLCJhIjoiY2pjazE5eTM2NDl2aDJ3cDUyeDlsb292NiJ9.Jr__XbmAolbLyzPDj7-8kQ';
 
@@ -16,55 +29,63 @@ function makeMapUnexpected(mapCoordinates, container, data) {
     container: `map-${container}`,
     center: [mapCoordinates.X1, mapCoordinates.Y1],
     maxZoom: 16,
-
-    dragPan: true,
-    scrollZoom: true,
+    pitch: 60,
+    dragPan: false,
+    scrollZoom: false,
     style: 'mapbox://styles/dock4242/ck43bzz4f01461cl4ri5e5ogn',
-    zoom: 7,
+    zoom: 11,
   });
 
   if (container !== 'intro') setupFlyover($mapUnexpected, mapCoordinates);
 
-  const popupUnexpected = new mapboxgl.Popup({
-    closeButton: false,
-    closeOnClick: false,
-  });
+  //   let popupUnexpected = new mapboxgl.Popup({
+  //     closeButton: false,
+  //     closeOnClick: false,
+  //     offset: 20
+  //   });
 
-  $mapUnexpected.on('mousemove', e => {
-    console.log(e.lngLat.wrap());
-    //   });
+  //   $mapUnexpected.on('zoom', e => {
+  //     const currentZoom = $mapUnexpected.getZoom()
+  //     if (currentZoom < 5) {
+  //       $mapUnexpected.getCanvas().style.cursor = '';
+  //       popupUnexpected.remove();
+  //     }
+  //     return
+  //   })
 
-    //   $mapUnexpected.on('mousemove', e => {
-    //     console
-    //       .log($mapUnexpected.queryRenderedFeatures(e.point)[0])
-    //       .filter(
-    //         feature => feature.sourceLayer === 'puma-centroid-attributes-910cco'
-    //       )[0];
-    const currentPUMA = $mapUnexpected
-      .queryRenderedFeatures(e.point)
-      .filter(feature => feature.sourceLayer === 'ipums_puma_2010_2-18tyev')[0]
-      .properties.PUMA;
 
-    // console.log(currentPUMA);
+  //   $mapUnexpected.on('mousemove', e => {
+  //     // console.log(e.lngLat.wrap());
+  //     const currentZoom = $mapUnexpected.getZoom()
+  //     if (currentZoom < 5) {
+  //       $mapUnexpected.getCanvas().style.cursor = '';
+  //       popupUnexpected.remove();
+  //       return
+  //     }
+  //     $mapUnexpected.getCanvas().style.cursor = 'pointer';
 
-    const pumaData = data.filter(datum => {
-      console.log(currentPUMA);
-      return datum.pumaFormatted === currentPUMA;
-    })[0];
-    console.log(pumaData);
+  //     const currentPUMA = $mapUnexpected.queryRenderedFeatures(e.point).filter(layer => {
+  //       return layer.layer.id === 'puma_polygons'
+  //     })[0]
 
-    const tooltipSubhed = `<h3 class='nbhd-subhed'>${pumaData.birthplace}</h3>`;
+  //     if (currentPUMA != undefined) {
 
-    popupUnexpected
-      .setLngLat(e.lngLat)
-      .setHTML(tooltipSubhed)
-      .addTo($mapUnexpected);
-  });
-  // console.log(pumaData.bithplace);
+  //       const pumaData = currentPUMA.properties.Name
+  //       console.log(pumaData)
 
-  // e.lngLat is the longitude, latitude geographical position of the event
-  // console.log(e.lngLat.wrap());
-  // });
+  //       const pumaDataFormatted = formatPUMA(pumaData)
+  //       //   console.log(pumaDataFormatted)
+  //       const tooltipSubhed = `<p class='nbhd-subhed'>${pumaDataFormatted}</p>`;
+  //       console.log(e.lngLat)
+
+  //       popupUnexpected
+  //         .setLngLat(e.lngLat)
+  //         .setHTML(tooltipSubhed)
+  //         .addTo($mapUnexpected);
+  //     }
+
+  //   });
+
 
   return $mapUnexpected;
 }
@@ -82,11 +103,6 @@ function makeTourMap(container) {
     zoom: 3.5355101377334592,
   });
 
-  //   $mapTour.on('mousemove', function(e) {
-  //     console.log(e);
-  //     // e.lngLat is the longitude, latitude geographical position of the event
-  //     // console.log(e.lngLat.wrap());
-  //   });
 
   return $mapTour;
 }
@@ -105,13 +121,68 @@ function makeExploreMap(container) {
     zoom: 3.5355101377334592,
   });
 
-  $mapExplore.on('mousemove', function(e) {
-    console.log(e);
-    // e.lngLat is the longitude, latitude geographical position of the event
+
+
+  let popupUnexpected = new mapboxgl.Popup({
+    closeButton: false,
+    closeOnClick: false,
+    offset: 20,
+    maxWidth: 300
+  });
+
+  $mapExplore.on('zoom', e => {
+    const currentZoom = $mapExplore.getZoom()
+    if (currentZoom < 5) {
+      $mapExplore.getCanvas().style.cursor = '';
+      popupUnexpected.remove();
+    }
+    return
+  })
+
+
+  $mapExplore.on('zoom', e => {
+    popupUnexpected.remove();
+    // console.log($mapExplore.getZoom())
+  })
+
+  $mapExplore.on('mousemove', e => {
     // console.log(e.lngLat.wrap());
+
+    const currentZoom = $mapExplore.getZoom()
+    if (currentZoom < 5) {
+      $mapExplore.getCanvas().style.cursor = '';
+      popupUnexpected.remove();
+      return
+    }
+    $mapExplore.getCanvas().style.cursor = 'pointer';
+
+    const currentPUMA = $mapExplore.queryRenderedFeatures(e.point).filter(layer => {
+      return layer.layer.id === 'puma_polygons'
+    })[0]
+
+    // const currentDiaspora =
+
+    if (currentPUMA != undefined) {
+
+      const pumaData = currentPUMA.properties.Name
+      console.log(pumaData)
+
+      const pumaDataFormatted = formatPUMA(pumaData)
+      //   console.log(pumaDataFormatted)
+      const tooltipSubhed = `<p class='nbhd-subhed'>${pumaDataFormatted}</p>`;
+      console.log(e.lngLat)
+
+      popupUnexpected
+        .setLngLat(e.lngLat)
+        .setHTML(tooltipSubhed)
+        .addTo($mapExplore);
+    }
+
   });
 
   $mapExplore.addControl(new mapboxgl.NavigationControl());
+
+
 
   return $mapExplore;
 }
@@ -125,15 +196,13 @@ function makeRoute($map, coords, counterValue) {
 
   const route = {
     type: 'FeatureCollection',
-    features: [
-      {
-        type: 'Feature',
-        geometry: {
-          type: 'LineString',
-          coordinates: [origin, destination],
-        },
+    features: [{
+      type: 'Feature',
+      geometry: {
+        type: 'LineString',
+        coordinates: [origin, destination],
       },
-    ],
+    }, ],
   };
 
   // A single point that animates along the route.

@@ -26,6 +26,7 @@ let data;
 let nestedData;
 
 let expandedNav = false;
+let initialTime = 1
 
 // const height = window.innerHeight;
 
@@ -142,13 +143,22 @@ function animateIntro(rawData) {
       center: [
         data[i].X,
         data[i].Y
-      ]
+      ],
+      speed: 1,
+      curve: 0.8, // change the speed at which it zooms out
+      // This can be any easing function: it takes a number between
+      // 0 and 1 and returns another number between 0 and 1.
+      //   easing: function (t) {
+      //     return t;
+      //   },
+      // this animation is considered essential with respect to prefers-reduced-motion
+      essential: true
     });
 
 
 
-    $countryHeaderLarge.text(`${newNameRaw}`);
-    $countryHeaderSmall.text(`${newNameRaw}`);
+    $countryHeaderLarge.text(`${newNameRaw.replace(/_/g, ' ')}`);
+    $countryHeaderSmall.text(`${newNameRaw.replace(/_/g, ' ')}`);
     titleCountryChange(newNameRaw)
 
     i++
@@ -157,11 +167,11 @@ function animateIntro(rawData) {
     }
 
 
-  }, 4000);
+  }, 8000);
 
-  d3.select('#map-intro').on('click', () => {
-    clearInterval(mapInterval)
-  })
+  //   d3.select('#map-intro').on('click', () => {
+  //       clearInterval(mapInterval)
+  //   })
 
   return rawData;
 }
@@ -179,15 +189,15 @@ function makeUnexpectedMaps(data) {
 
 
 
-  $mapTonga = makeMaps.makeMapUnexpected(tongaCoords, 'tonga', rawData)
-  $mapEcuador = makeMaps.makeMapUnexpected(ecuadorCoords, 'ecuador', rawData)
-  $mapBulgaria = makeMaps.makeMapUnexpected(bulgariaCoords, 'bulgaria', rawData)
-  $mapGreece = makeMaps.makeMapUnexpected(greeceCoords, 'greece', rawData)
+  //   $mapTonga = makeMaps.makeMapUnexpected(tongaCoords, 'tonga', rawData)
+  //   $mapEcuador = makeMaps.makeMapUnexpected(ecuadorCoords, 'ecuador', rawData)
+  //   $mapBulgaria = makeMaps.makeMapUnexpected(bulgariaCoords, 'bulgaria', rawData)
+  //   $mapGreece = makeMaps.makeMapUnexpected(greeceCoords, 'greece', rawData)
 
-  makeMaps.makeRoute($mapTonga, tongaCoords, 0)
-  makeMaps.makeRoute($mapBulgaria, bulgariaCoords, 0)
-  makeMaps.makeRoute($mapEcuador, ecuadorCoords, 0)
-  makeMaps.makeRoute($mapGreece, greeceCoords, 0)
+  //   makeMaps.makeRoute($mapTonga, tongaCoords, 0)
+  //   makeMaps.makeRoute($mapBulgaria, bulgariaCoords, 0)
+  //   makeMaps.makeRoute($mapEcuador, ecuadorCoords, 0)
+  //   makeMaps.makeRoute($mapGreece, greeceCoords, 0)
 
 
   return data;
@@ -207,6 +217,7 @@ function getReasonNumber(reason) {
 }
 
 function updateMap(el) {
+  console.log(el)
 
   function flyToCoords(currentStep) {
     const destination = tourCoordinates.filter(item => item.name === currentStep)[0]
@@ -225,26 +236,21 @@ function updateMap(el) {
     flyToCoords(currentStep)
   } else if (currentStep === 'nyc-queens') {
     flyToCoords(currentStep)
-  } else if (currentStep === 'nyc-manhattan-harlem') {
-    flyToCoords(currentStep)
-  } else if (currentStep === 'nyc-bronx') {
-    flyToCoords(currentStep)
-  } else if (currentStep === 'nyc-staten-island') {
+  } else if (currentStep === 'nyc-manhattan-bronx') {
     flyToCoords(currentStep)
   } else if (currentStep === 'la-1') {
     flyToCoords(currentStep)
-  } else if (currentStep === 'la-2') {
+  } else if (currentStep === 'fl-1') {
     flyToCoords(currentStep)
-  } else if (currentStep === 'la-3') {
+  } else if (currentStep === 'hou-1') {
     flyToCoords(currentStep)
   } else if (currentStep === 'minneapolis') {
-    flyToCoords(currentStep)
-  } else if (currentStep === 'slc') {
     flyToCoords(currentStep)
   }
 }
 
 function updateMapBack(el) {
+  console.log(el)
 
   function flyBackToCoords(prevStep) {
     const destination = tourCoordinates.filter(item => item.name === prevStep)[0]
@@ -268,21 +274,15 @@ function updateMapBack(el) {
     flyBackToCoords(prevStep)
   } else if (prevStep === 'nyc-queens') {
     flyBackToCoords(prevStep)
-  } else if (prevStep === 'nyc-manhattan-harlem') {
-    flyBackToCoords(prevStep)
-  } else if (prevStep === 'nyc-bronx') {
-    flyBackToCoords(prevStep)
-  } else if (prevStep === 'nyc-staten-island') {
+  } else if (prevStep === 'nyc-manhattan-bronx') {
     flyBackToCoords(prevStep)
   } else if (prevStep === 'la-1') {
     flyBackToCoords(prevStep)
-  } else if (prevStep === 'la-2') {
+  } else if (prevStep === 'fl-1') {
     flyBackToCoords(prevStep)
-  } else if (prevStep === 'la-3') {
+  } else if (prevStep === 'hou-1') {
     flyBackToCoords(prevStep)
   } else if (prevStep === 'minneapolis') {
-    flyBackToCoords(prevStep)
-  } else if (prevStep === 'slc') {
     flyBackToCoords(prevStep)
   }
 
@@ -316,63 +316,63 @@ function setupEnterView() {
     }
   })
 
-  enterView({
-    selector: '#map-tonga',
-    enter(el) {
-      $mapTonga.flyTo({
-        center: [tongaCoords.X2, tongaCoords.Y2],
-        speed: 0.4,
-      });
-    },
-    exit(el) {}
-  })
+  //   enterView({
+  //     selector: '#map-tonga',
+  //     enter(el) {
+  //       $mapTonga.flyTo({
+  //         center: [tongaCoords.X2, tongaCoords.Y2],
+  //         speed: 0.4,
+  //       });
+  //     },
+  //     exit(el) {}
+  //   })
 
 
-  enterView({
-    selector: '#map-bulgaria',
-    enter(el) {
-      $mapBulgaria.flyTo({
-        center: [bulgariaCoords.X2, bulgariaCoords.Y2],
-        speed: 0.4,
-      });
-    },
-    exit(el) {}
-  })
+  //   enterView({
+  //     selector: '#map-bulgaria',
+  //     enter(el) {
+  //       $mapBulgaria.flyTo({
+  //         center: [bulgariaCoords.X2, bulgariaCoords.Y2],
+  //         speed: 0.4,
+  //       });
+  //     },
+  //     exit(el) {}
+  //   })
 
-  enterView({
-    selector: '#map-greece',
-    enter(el) {
-      $mapGreece.flyTo({
-        center: [greeceCoords.X2, greeceCoords.Y2],
-        speed: 0.4,
-      });
-    },
-    exit(el) {}
-  })
+  //   enterView({
+  //     selector: '#map-greece',
+  //     enter(el) {
+  //       $mapGreece.flyTo({
+  //         center: [greeceCoords.X2, greeceCoords.Y2],
+  //         speed: 0.4,
+  //       });
+  //     },
+  //     exit(el) {}
+  //   })
 
-  enterView({
-    selector: '#map-ecuador',
-    enter(el) {
-      $mapEcuador.flyTo({
-        center: [ecuadorCoords.X2, ecuadorCoords.Y2],
-        speed: 0.4,
-      });
-    },
-    exit(el) {}
-  })
+  //   enterView({
+  //     selector: '#map-ecuador',
+  //     enter(el) {
+  //       $mapEcuador.flyTo({
+  //         center: [ecuadorCoords.X2, ecuadorCoords.Y2],
+  //         speed: 0.4,
+  //       });
+  //     },
+  //     exit(el) {}
+  //   })
 
-  enterView({
-    selector: '.country-button.Zimbabwe',
-    enter(el) {
-      d3.select('.explore.bottom')
-        .classed('fade', false)
-      //   el.style.backgroundImage('background-image', 'linear-gradient(to bottom, rgba(60,59,110,0), rgba(60,59,110, 0) 100%)')
-    },
-    exit(el) {
-      d3.select('.explore.bottom')
-        .classed('fade', true)
-    }
-  })
+  //   enterView({
+  //     selector: '.country-button.Zimbabwe',
+  //     enter(el) {
+  //       d3.select('.explore.bottom')
+  //         .classed('fade', false)
+  //       //   el.style.backgroundImage('background-image', 'linear-gradient(to bottom, rgba(60,59,110,0), rgba(60,59,110, 0) 100%)')
+  //     },
+  //     exit(el) {
+  //       d3.select('.explore.bottom')
+  //         .classed('fade', true)
+  //     }
+  //   })
 
   enterView({
     selector: '.explore__viz',
@@ -391,31 +391,40 @@ function setupEnterView() {
 
 function setupExploreMapInteraction() {
 
+  //   console.log('cool')
   // Add sidebar buttons 
-  d3.select('nav.explore__nav-bar')
+  const $countryButtons = d3.select('nav.explore__nav-bar')
     .select('ul')
     .selectAll('li.country-button')
     .data(rawData)
     .join('li')
-    .attr('class', d => {
+
+  $countryButtons.attr('class', d => {
       return `country-button ${d.birthplace}`
     })
-    .text(d => d.birthplace)
+    .text(d => d.birthplace.replace(/_/g, ' '))
     .on('mouseenter', d => {
       const thisCountry = d.birthplace;
+
+      //   $mapExplore
       d3.select('div.explore__viz')
         .select(`.marker.${thisCountry}`).classed('showMarker', true)
+
+      $mapExplore.setLayoutProperty('Birthplace names', 'visibility', 'none');
     })
     .on('mouseleave', d => {
       const thisCountry = d.birthplace;
       d3.select('div.explore__viz')
         .select(`.marker.${thisCountry}`).classed('showMarker', false)
+
+      $mapExplore.setLayoutProperty('Birthplace names', 'visibility', 'visible');
     })
     .on('click', d => {
       const thisCountry = d.birthplace;
       d3.select('div.explore__viz')
         .select(`.marker.${thisCountry}`).classed('showMarker', true)
     })
+
 
   // Creating mapbox markers
   rawData.forEach(marker => {
@@ -427,11 +436,61 @@ function setupExploreMapInteraction() {
       .addTo($mapExplore);
   });
 
+
+
+  $mapExplore.on('load', () => {
+
+    // $mapExplore.addSource('Birthplace names', {
+    //   type: 'symbol',
+    //   sourceLayer: "Birthplace names",
+    //   //   url: 'mapbox://dock4242.4ivco4c2'
+    // });
+    // console.log($mapExplore.getStyle())
+
+
+
+
+    // var features = $mapExplore.querySourceFeatures("updated_centroids-7qn63d");
+    // console.log(features)
+
+    // var features = $mapExplore.querySourceFeatures("updated_centroids-7qn63d", {
+    //   sourceLayer: "Birthplace names"
+    // });
+    // console.log(features)
+
+
+
+
+
+    const features = $mapExplore.querySourceFeatures('pumas', {
+      sourceLayer: 'puma_polygons'
+    });
+
+    console.log(features)
+  })
+
+
+  //   places.features.forEach(function(feature) 
+
+
+
+
+
+
+  //   console.log($mapExplore.queryRenderedFeatures({
+  //     layers: ['ipums_puma_2010_2-18tyev']
+  //   }))
+
+
   // ensuring scroll bars are visible in navigation section
 
   //   const scrollSection = document.getElementsByClassName('button-list');
   //   scrollSection.scrollTop = 1;
   //   scrollSection.scrollTop = 0;
+
+
+
+
 
 }
 
@@ -440,8 +499,10 @@ function init() {
   setupDOM()
 
   Promise.all([
-      d3.csv('assets/data/diaspora_w_reasons.csv'),
-      d3.csv('assets/data/updatecoords.csv')
+      //   d3.csv('assets/data/diaspora_w_reasons.csv'),
+      // d3.csv('assets/data/updated_centroids.csv'),
+      d3.csv('assets/data/coordinates - edited_final.csv'),
+      d3.csv('assets/data/diaspora_data_culling - updatecoords.csv')
     ])
     .then(data => {
       tourCoordinates = data[1]
@@ -464,7 +525,7 @@ function init() {
           }
 
         })()
-      }))
+      })).filter(datum => datum.non_specific != '1')
       //   return data[0]
       return rawData
     })

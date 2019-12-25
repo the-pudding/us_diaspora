@@ -64,6 +64,7 @@ main
             font-family $national   
             color white
             background-color: $thisBlue
+            padding 0 1.5rem
 
 
     &__map
@@ -156,7 +157,7 @@ main
         visibility: hidden
         position: absolute
         bottom 50%
-        right 0
+        right 1%
         cursor pointer
 
         .triangle-left  
@@ -177,16 +178,16 @@ main
                 transition: transform 0.25s ease-out;
             
             &:before
-                top: 10%;
+                top: 15%;
                 left: 50%;
                 width: 4px;
-                height: 80%;
+                height: 70%;
                 margin-left: -2px;
 
             &:after
                 top: 50%;
-                left: 10%;
-                width: 80%;
+                left: 15%;
+                width: 70%;
                 height: 4px;
                 margin-top: -2px;
             
@@ -253,6 +254,16 @@ main
         font-family: $national
         color gray     
         text-align: justify 
+
+.mapboxgl-popup,
+.mapboxgl-popup-content,
+.nbhd-subhed
+    pointer-events: none
+    font-family: $national
+    margin 0
+
+.nbhd-subhed   
+    font-size 14px 
 
 
 // .explore
