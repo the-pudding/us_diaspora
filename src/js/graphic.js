@@ -448,7 +448,6 @@ function setupEnterView() {
 
 function setupExploreMapInteraction() {
 
-  //   console.log('cool')
   // Add sidebar buttons 
   const $countryButtons = d3.select('nav.explore__nav-bar')
     .select('ul')
