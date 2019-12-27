@@ -21,7 +21,7 @@ function formatPUMA(puma) {
 
 function makeMapUnexpected(mapCoordinates, container, data) {
 
-  d3.select('html').classed('no-scroll', true)
+  //   d3.select('html').classed('no-scroll', true)
 
   mapboxgl.accessToken =
     'pk.eyJ1IjoiZG9jazQyNDIiLCJhIjoiY2pjazE5eTM2NDl2aDJ3cDUyeDlsb292NiJ9.Jr__XbmAolbLyzPDj7-8kQ';

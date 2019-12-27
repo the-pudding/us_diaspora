@@ -27,7 +27,8 @@ let nestedData;
 
 let mapInterval;
 let expandedNav = false;
-let initialTime = 1
+let scrollMarker = true;
+let i = 0;
 
 // const height = window.innerHeight;
 
@@ -36,31 +37,6 @@ const introCoords = {
   'Y1': 46.20214
 }
 
-// const tongaCoords = {
-//   'X2': -111.99184859446382,
-//   'Y2': 40.69852553447012,
-//   'X1': -175.196482,
-//   'Y1': -21.200206
-// };
-// const ecuadorCoords = {
-//   'X2': -73.86617173851454,
-//   'Y2': 40.74069877883909,
-//   'X1': -78.78488785454653,
-//   'Y1': -1.4859650869146321
-// };
-// const bulgariaCoords = {
-//   'X2': -87.9760049258716,
-//   'Y2': 42.038264174921,
-//   'X1': 25.120547279064226,
-//   'Y1': 42.957556303399286
-// };
-
-// const greeceCoords = {
-//   'X2': -82.76700345733673,
-//   'Y2': 27.972586791167004,
-//   'X1': 22.368843,
-//   'Y1': 38.969777
-// }
 
 function nestData(dataArg) {
   console.log(dataArg)
@@ -83,11 +59,6 @@ function nestData(dataArg) {
 function setupDOM() {
   $countryHeaderLarge = d3.select('.country-title__suffix')
   $countryHeaderSmall = d3.select('.subhed-country')
-  //   $mapTour = makeMaps.makeTourMap('tour')
-
-  //   $mapTour.on('click', () => {
-  //     console.log($mapTour.getZoom())
-  //   })
 
 
   d3.select('.explore__expand-tab').on('click', () => {
@@ -101,8 +72,6 @@ function setupDOM() {
       d3.select('.triangle-left').classed('collapsed', false)
       expandedNav = false
     }
-
-    console.log('log')
 
 
   })
@@ -119,15 +88,17 @@ function setupDOM() {
     d3.select('.intro__cover-text').classed('slide-out-left', true)
     d3.select('.masthead').classed('slide-out-right', true)
     d3.select('html').classed('no-scroll', false)
+    window.scrollTo(0, 0);
+
   })
 
-  document.addEventListener('click', function (e) {
+  //   document.addEventListener('click', function (e) {
 
-    e = e || window.event;
-    const target = e.target || e.srcElement,
-      text = target.textContent || target.innerText;
-    console.log(target)
-  }, false);
+  //     e = e || window.event;
+  //     const target = e.target || e.srcElement,
+  //       text = target.textContent || target.innerText;
+  //     console.log(target)
+  //   }, false);
 
 
 
@@ -152,51 +123,49 @@ function animateIntro(rawData) {
       X: +item.X,
       Y: +item.Y
     }));
-  let i = 0;
 
-  //   console.log(data)
   $mapIntro.on('load', () => {
 
-    mapInterval = setInterval(function () {
 
-      const newNameRaw = data[i].birthplace;
+    const newNameRaw = data[i].birthplace;
+    $countryHeaderLarge.text(`${newNameRaw.replace(/_/g, ' ')}`);
+    $countryHeaderSmall.text(`${newNameRaw.replace(/_/g, ' ')}`);
 
-      $mapIntro.flyTo({
-        center: [
-          data[i].X,
-          data[i].Y
-        ],
-        speed: 0.8,
-        curve: 0.6, // change the speed at which it zooms out
-        // This can be any easing function: it takes a number between
-        // 0 and 1 and returns another number between 0 and 1.
-        //   easing: function (t) {
-        //     return t;
-        //   },
-        // this animation is considered essential with respect to prefers-reduced-motion
-        // essential: true
-      });
+    $mapIntro.flyTo({
+      center: [
+        data[i].X,
+        data[i].Y
+      ],
+      zoom: 11,
+      speed: 1,
+      curve: 0.6,
+    }).on('moveend', function (e) {
+
+      if (scrollMarker) {
+
+        i === data.length ? i = 0 : i++
+        console.log(data[i])
+
+        const newNameRaw = data[i].birthplace;
+        $countryHeaderLarge.text(`${newNameRaw.replace(/_/g, ' ')}`);
+        $countryHeaderSmall.text(`${newNameRaw.replace(/_/g, ' ')}`);
+        titleCountryChange(newNameRaw)
+        $mapIntro.flyTo({
+          center: [
+            data[i].X,
+            data[i].Y
+          ],
+          zoom: 11,
+          speed: 1,
+          curve: 0.6,
+        })
+      } else return
+
+    });
 
 
-
-      $countryHeaderLarge.text(`${newNameRaw.replace(/_/g, ' ')}`);
-      $countryHeaderSmall.text(`${newNameRaw.replace(/_/g, ' ')}`);
-      titleCountryChange(newNameRaw)
-
-      i++
-      if (i === data.length) {
-        i = 0
-      }
-
-
-    }, 6000);
   })
 
-
-
-  //   d3.select('#map-intro').on('click', () => {
-  //       clearInterval(mapInterval)
-  //   })
 
   return rawData;
 }
@@ -210,39 +179,9 @@ function makeIntroMap(data) {
   return data;
 }
 
-function makeUnexpectedMaps(data) {
-
-
-
-  //   $mapTonga = makeMaps.makeMapUnexpected(tongaCoords, 'tonga', rawData)
-  //   $mapEcuador = makeMaps.makeMapUnexpected(ecuadorCoords, 'ecuador', rawData)
-  //   $mapBulgaria = makeMaps.makeMapUnexpected(bulgariaCoords, 'bulgaria', rawData)
-  //   $mapGreece = makeMaps.makeMapUnexpected(greeceCoords, 'greece', rawData)
-
-  //   makeMaps.makeRoute($mapTonga, tongaCoords, 0)
-  //   makeMaps.makeRoute($mapBulgaria, bulgariaCoords, 0)
-  //   makeMaps.makeRoute($mapEcuador, ecuadorCoords, 0)
-  //   makeMaps.makeRoute($mapGreece, greeceCoords, 0)
-
-
-  return data;
-}
-
-function getReasonNumber(reason) {
-  if (reason === 'economic') {
-    return '3'
-  }
-  if (reason === 'community') {
-    return '1'
-  }
-  if (reason === 'political') {
-    return '2'
-  }
-
-}
 
 function updateMap(el) {
-  console.log(el)
+  //   console.log(el)
 
   function flyToCoords(currentStep) {
     const destination = tourCoordinates.filter(item => item.name === currentStep)[0]
@@ -275,7 +214,7 @@ function updateMap(el) {
 }
 
 function updateMapBack(el) {
-  console.log(el)
+  //   console.log(el)
 
   function flyBackToCoords(prevStep) {
     const destination = tourCoordinates.filter(item => item.name === prevStep)[0]
@@ -316,20 +255,6 @@ function updateMapBack(el) {
 
 function setupEnterView() {
 
-  //   enterView({
-  //     selector: '.tour',
-  //     enter(el) {
-
-  //     },
-  //     exit(el) {
-  //       //   d3.select('.intro__scroll-cue').classed('hidden', false)
-  //     },
-  //     progress(el, progress) {
-  //       //   el.style.opacity = progress;
-  //     },
-  //     offset: 0.1, // enter at middle of viewport
-  //     once: false, // trigger just once
-  //   });
 
   window.onscroll = function () {
     myFunction()
@@ -337,14 +262,43 @@ function setupEnterView() {
 
   function myFunction() {
     if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+      scrollMarker = false;
       d3.select('.intro__scroll-cue').classed('hidden', true)
-      clearInterval(mapInterval)
-      //   console.log('fifty')
+      $mapIntro.on('load', e => {
+        $mapIntro.flyTo({}).on('moveend', () => {})
+      })
+      $mapIntro.zoom = +$mapIntro.getZoom() - 0.1
     } else {
-      //   console.log('less than fifty')
       d3.select('.intro__scroll-cue').classed('hidden', false)
     }
   }
+
+  d3.select('.tour-step:nth-child(2)').classed('ux__fade-intro-txt', true)
+
+
+
+  enterView({
+    selector: '.ux__fade-intro-txt',
+    enter(el) {},
+    exit(el) {
+      console.log('exited')
+    },
+    progress(el, progress) {
+      //   console.log(progress)
+      d3.select('.intro__cover-text').style('opacity', `${1-progress*2}`)
+      $mapIntro
+        .on('moveend', () => {})
+        .flyTo({
+          pitch: `${60-(progress*60)}`
+        })
+
+      //   if (progress === 0) {
+      //     // scrollMarker = true
+      //   }
+    },
+    offset: 0, // enter at middle of viewport
+    once: false, // trigger just once
+  });
 
 
 
@@ -366,83 +320,13 @@ function setupEnterView() {
   enterView({
     selector: '.short-story',
     enter(el) {
-      console.log(el)
+      //   console.log(el)
     },
     exit(el) {
-      console.log(el)
+      //   console.log(el)
     }
   })
 
-  //   enterView({
-  //     selector: '#map-tonga',
-  //     enter(el) {
-  //       $mapTonga.flyTo({
-  //         center: [tongaCoords.X2, tongaCoords.Y2],
-  //         speed: 0.4,
-  //       });
-  //     },
-  //     exit(el) {}
-  //   })
-
-
-  //   enterView({
-  //     selector: '#map-bulgaria',
-  //     enter(el) {
-  //       $mapBulgaria.flyTo({
-  //         center: [bulgariaCoords.X2, bulgariaCoords.Y2],
-  //         speed: 0.4,
-  //       });
-  //     },
-  //     exit(el) {}
-  //   })
-
-  //   enterView({
-  //     selector: '#map-greece',
-  //     enter(el) {
-  //       $mapGreece.flyTo({
-  //         center: [greeceCoords.X2, greeceCoords.Y2],
-  //         speed: 0.4,
-  //       });
-  //     },
-  //     exit(el) {}
-  //   })
-
-  //   enterView({
-  //     selector: '#map-ecuador',
-  //     enter(el) {
-  //       $mapEcuador.flyTo({
-  //         center: [ecuadorCoords.X2, ecuadorCoords.Y2],
-  //         speed: 0.4,
-  //       });
-  //     },
-  //     exit(el) {}
-  //   })
-
-  //   enterView({
-  //     selector: '.country-button.Zimbabwe',
-  //     enter(el) {
-  //       d3.select('.explore.bottom')
-  //         .classed('fade', false)
-  //       //   el.style.backgroundImage('background-image', 'linear-gradient(to bottom, rgba(60,59,110,0), rgba(60,59,110, 0) 100%)')
-  //     },
-  //     exit(el) {
-  //       d3.select('.explore.bottom')
-  //         .classed('fade', true)
-  //     }
-  //   })
-
-  enterView({
-    selector: '.explore__viz',
-    enter(el) {
-      d3.select('.explore__expand-tab')
-        .style('visibility', 'visible')
-    },
-    exit(el) {
-      d3.select('.explore__expand-tab')
-        .style('visibility', 'hidden')
-    },
-    offset: 0
-  })
 
 }
 
@@ -491,63 +375,6 @@ function setupExploreMapInteraction() {
       .setLngLat([+marker.X, +marker.Y])
       .addTo($mapExplore);
   });
-
-
-
-  $mapExplore.on('load', () => {
-
-    // $mapExplore.addSource('Birthplace names', {
-    //   type: 'symbol',
-    //   sourceLayer: "Birthplace names",
-    //   //   url: 'mapbox://dock4242.4ivco4c2'
-    // });
-    // console.log($mapExplore.getStyle())
-
-
-
-
-    // var features = $mapExplore.querySourceFeatures("updated_centroids-7qn63d");
-    // console.log(features)
-
-    // var features = $mapExplore.querySourceFeatures("updated_centroids-7qn63d", {
-    //   sourceLayer: "Birthplace names"
-    // });
-    // console.log(features)
-
-
-
-
-
-    const features = $mapExplore.querySourceFeatures('pumas', {
-      sourceLayer: 'puma_polygons'
-    });
-
-    console.log(features)
-  })
-
-
-  //   places.features.forEach(function(feature) 
-
-
-
-
-
-
-  //   console.log($mapExplore.queryRenderedFeatures({
-  //     layers: ['ipums_puma_2010_2-18tyev']
-  //   }))
-
-
-  // ensuring scroll bars are visible in navigation section
-
-  //   const scrollSection = document.getElementsByClassName('button-list');
-  //   scrollSection.scrollTop = 1;
-  //   scrollSection.scrollTop = 0;
-
-
-
-
-
 }
 
 
@@ -586,9 +413,9 @@ function init() {
       return rawData
     })
     .then(data => makeIntroMap(data))
-    .then(data => makeUnexpectedMaps(data))
+    // .then(data => makeUnexpectedMaps(data))
     .then(data => animateIntro(data))
-    .then(data => nestData(data))
+    // .then(data => nestData(data))
     // .then(() => $mapExplore = makeMaps.makeExploreMap('explore'))
     // .then(() => setupExploreMapInteraction())
     .then(() => setupEnterView())
