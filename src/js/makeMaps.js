@@ -46,6 +46,7 @@ function makeMapUnexpected(mapCoordinates, container, data) {
     // zoom: 11,
   });
 
+  $mapUnexpected.addControl(new mapboxgl.NavigationControl());
   $mapUnexpected.on('load', () => {
 
     // console.log($mapUnexpected.getSource('composite'))
@@ -111,7 +112,7 @@ function makeMapUnexpected(mapCoordinates, container, data) {
 
   //   });
 
-  $mapUnexpected.addControl(new mapboxgl.NavigationControl());
+
 
   return $mapUnexpected;
 }
