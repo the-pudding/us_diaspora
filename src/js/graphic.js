@@ -32,6 +32,7 @@ let lastCountry;
 let flying;
 let currentTime;
 let i = 0;
+let thisCountry;
 
 const DURATION = 7000
 
@@ -397,17 +398,24 @@ function setupExploreMapInteraction() {
     })
     .text(d => d.birthplace.replace(/_/g, ' '))
     .on('mouseenter', d => {
-      const thisCountry = d.birthplace;
+      thisCountry = d.birthplace;
+      //   console.log(thisCountry)
 
-      console.log($mapIntro.queryRenderedFeatures().filter(item => item.sourceLayer === 'only_pumas_w_diasporas-4hi77s'))
+      //   console.log($mapIntro.queryRenderedFeatures().filter(item => item.sourceLayer === 'only_pumas_w_diasporas-4hi77s'))
 
       const visibleFeatures = $mapIntro.queryRenderedFeatures().filter(item => item.sourceLayer === 'only_pumas_w_diasporas-4hi77s')
 
-      var popup = new mapboxgl.Popup({
+      //   console.log(visibleFeatures)
+
+      const thisCountryFeatures = visibleFeatures.filter(item => item.properties.birthplace.replace(/ /g, '_').includes(thisCountry))
+
+      console.log(thisCountry)
+      console.log(thisCountryFeatures)
+      const popup = new mapboxgl.Popup({
         closeButton: false
       });
 
-      visibleFeatures.forEach(feature => {
+      thisCountryFeatures.forEach(feature => {
         // const prop = feature.properties;
         // const item = document.createElement('a');
         // // item.href = prop.wikipedia;
@@ -417,46 +425,25 @@ function setupExploreMapInteraction() {
         // // Highlight corresponding feature on the map
         popup
           .setLngLat(feature.geometry.coordinates)
-          .setText(
-            feature.properties.Name
+          .setHTML(
+            `<div class='tooltip__diaspora-name ${feature.properties.birthplace}'>${feature.properties.birthplace}</div>
+            <div class='tooltip__puma-name'>${feature.properties.Name}</div>`
           )
           .addTo($mapIntro);
 
       })
 
-      //   console.log($mapIntro.querySourceFeatures('coordinates_-_unique_coordina-4abjzt'))
-      //   .filter(item => item.sourceLayer === 'coordinates_-_unique_coordina-4abjzt'))
 
 
-      //   const tooltipBump = d3.select(`.marker.${thisCountry}`).node().offsetHeight / 2 //include height of triangle at bottom
-
-      //   const originalTransformTranslate = d3.select(`.marker.${thisCountry}`).style('transform')
-      //   const originalXTranslate = originalTransformTranslate.split('translate')[2].split('px, ')[0].replace('(', '')
-      //   const originalYTranslate = originalTransformTranslate.split('translate')[2].split('px, ')[1].replace('px)', '')
-
-      //   const newYTranslate = originalYTranslate - tooltipBump
-
-      //   const newTransformString = `translate(-50%, -50%) translate(${originalXTranslate}px, ${newYTranslate}px)`
-      //   const originalTransformString = d3.select(`.marker.${thisCountry}`).style('transform')
-
-      //   console.log(`${d.birthplace} bump: ${tooltipBump}`)
-      //   console.log(`${d.birthplace} y translate original: ${originalYTranslate}`)
-      //   console.log(`${d.birthplace} y translate new: ${newYTranslate}`)
-      //   console.log(`old string: ${originalTransformString}`)
-      //   console.log(`new string: ${newTransformString}`)
-
-
-      //   d3.select(`.marker.${thisCountry}`).attr('transform', `${newTransformString}`)
-
-
-      d3.select('div.intro__cover-viz')
-        .select(`.marker.${thisCountry}`).classed('showMarker', true)
+      //   d3.select('div.intro__cover-viz')
+      //     .select(`.marker.${thisCountry}`).classed('showMarker', true)
 
     })
     .on('mouseleave', d => {
-      const thisCountry = d.birthplace;
-      d3.select('div.intro__cover-viz')
-        .select(`.marker.${thisCountry}`).classed('showMarker', false)
+      d3.selectAll('.mapboxgl-popup').remove()
+      //   const thisCountry = d.birthplace;
+      //   d3.select('div.intro__cover-viz')
+      //     .select(`.marker.${thisCountry}`).classed('showMarker', false)
 
       //   $mapExplore.setLayoutProperty('Birthplace names', 'visibility', 'visible');
     })
