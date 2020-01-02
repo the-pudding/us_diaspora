@@ -27,8 +27,13 @@ let nestedData;
 
 let mapInterval;
 let expandedNav = false;
-let scrollMarker = true;
+let scrollMarker = false;
+let lastCountry;
+let flying;
+let currentTime;
 let i = 0;
+
+const DURATION = 7000
 
 // const height = window.innerHeight;
 
@@ -39,7 +44,7 @@ const introCoords = {
 
 
 function nestData(dataArg) {
-  console.log(dataArg)
+  //   console.log(dataArg)
 
   nestedData = d3.nest()
     .key(d => d.reason_num)
@@ -92,15 +97,12 @@ function setupDOM() {
 
   })
 
-  //   document.addEventListener('click', function (e) {
 
-  //     e = e || window.event;
-  //     const target = e.target || e.srcElement,
-  //       text = target.textContent || target.innerText;
-  //     console.log(target)
-  //   }, false);
-
-
+  d3.select('html').on('click', () => {
+    d3.select('.intro__blurb')
+      .style('top', '-50%')
+    //   .style('transform', 'translate(-200%,-200%)')
+  })
 
 
 }
@@ -115,6 +117,10 @@ function titleCountryChange(name) {
 
 function animateIntro(rawData) {
 
+
+
+
+
   data = rawData.sort((a, b) => {
       return (a.birthplace < b.birthplace) ? -1 : 1;
     })
@@ -124,47 +130,96 @@ function animateIntro(rawData) {
       Y: +item.Y
     }));
 
-  $mapIntro.on('load', () => {
+  //   data = rawData.sort(() => Math.random() - 0.5)
 
 
-    const newNameRaw = data[i].birthplace;
-    $countryHeaderLarge.text(`${newNameRaw.replace(/_/g, ' ')}`);
-    $countryHeaderSmall.text(`${newNameRaw.replace(/_/g, ' ')}`);
 
-    $mapIntro.flyTo({
-      center: [
-        data[i].X,
-        data[i].Y
-      ],
-      zoom: 11,
-      speed: 1,
-      curve: 0.6,
-    }).on('moveend', function (e) {
-
-      if (scrollMarker) {
-
-        i === data.length ? i = 0 : i++
-        console.log(data[i])
-
-        const newNameRaw = data[i].birthplace;
-        $countryHeaderLarge.text(`${newNameRaw.replace(/_/g, ' ')}`);
-        $countryHeaderSmall.text(`${newNameRaw.replace(/_/g, ' ')}`);
-        titleCountryChange(newNameRaw)
-        $mapIntro.flyTo({
-          center: [
-            data[i].X,
-            data[i].Y
-          ],
-          zoom: 11,
-          speed: 1,
-          curve: 0.6,
-        })
-      } else return
-
-    });
+  //   $mapIntro.on('load', () => {
 
 
-  })
+  //     const topTimer = d3.timer(topTimeTaken => {
+
+  //       const newNameRaw = data[i].birthplace;
+  //       $countryHeaderLarge.text(`${newNameRaw.replace(/_/g, ' ')}`);
+  //       $countryHeaderSmall.text(`${newNameRaw.replace(/_/g, ' ')}`);
+
+  //       const zoomLevel = data[i].Name.includes('NYC') ? 13 : 9;
+
+  //       const t = d3.timer(elapsed => {
+  //         currentTime = elapsed;
+
+  //         d3.select('.progress-bar')
+  //           .style('width', () => {
+  //             console.log(currentTime)
+  //             return `${currentTime/DURATION * 100}%`
+  //           })
+  //         console.log(elapsed)
+  //         if (elapsed > DURATION || scrollMarker) t.stop();
+  //       }, 10);
+
+
+  //       $mapIntro.flyTo({
+  //         center: [
+  //           data[i].X,
+  //           data[i].Y
+  //         ],
+  //         zoom: zoomLevel,
+  //         speed: 1,
+  //         curve: 0.6,
+  //       })
+
+  //       if (topTimeTaken > DURATION || scrollMarker) topTimer.stop();
+  //       i++
+  //       if (i === data.length - 1) {
+  //         i = 0
+  //       }
+  //     }, 6000)
+
+
+
+
+
+
+  //     // mapInterval = setInterval(() => {
+
+  //     //   i++
+  //     //   if (i === data.length - 1) {
+  //     //     i = 0
+  //     //   }
+
+  //     //   const t = d3.timer(elapsed => {
+  //     //     currentTime = elapsed;
+
+  //     //     d3.select('.progress-bar')
+  //     //       .style('width', () => {
+  //     //         console.log(currentTime)
+  //     //         return `${currentTime/DURATION * 100}%`
+  //     //       })
+  //     //     console.log(elapsed)
+  //     //     if (elapsed > DURATION || scrollMarker) t.stop();
+  //     //   }, 10);
+
+  //     //   const newNameRaw = data[i].birthplace;
+  //     //   $countryHeaderLarge.text(`${newNameRaw.replace(/_/g, ' ')}`);
+  //     //   $countryHeaderSmall.text(`${newNameRaw.replace(/_/g, ' ')}`);
+
+  //     //   const zoomLevel = data[i].Name.includes('NYC') ? 13 : 9;
+
+
+  //     //   $mapIntro.flyTo({
+  //     //     center: [
+  //     //       data[i].X,
+  //     //       data[i].Y
+  //     //     ],
+  //     //     zoom: zoomLevel,
+  //     //     speed: 1,
+  //     //     curve: 0.6,
+  //     //   })
+  //     // }, DURATION)
+
+
+
+  //   })
 
 
   return rawData;
@@ -179,42 +234,74 @@ function makeIntroMap(data) {
   return data;
 }
 
+function pitchMap(el, progress) {
+
+  const currentStep = el.getAttribute('data-step')
+
+  if (currentStep === 'pitch-up') {
+
+
+
+    d3.select('.intro__cover-text').style('opacity', `${1-progress*2}`)
+    $mapIntro
+      .on('moveend', () => {})
+      .flyTo({
+        pitch: `${60-(progress*60)}`,
+        //   speed: 2,
+        easing: () => {
+          return 1
+        }
+      })
+  }
+}
+
+
+
 
 function updateMap(el) {
-  //   console.log(el)
+  console.log(el)
 
-  function flyToCoords(currentStep) {
+  function changeVisuals(currentStep) {
+
     const destination = tourCoordinates.filter(item => item.name === currentStep)[0]
+
     $mapIntro.flyTo({
       center: [+destination.lon, +destination.lat],
       speed: 1,
       zoom: +destination.zoom
     })
   }
+
   const currentStep = el.getAttribute('data-step')
   if (currentStep === 'usa') {
-    flyToCoords(currentStep)
+    changeVisuals(currentStep)
   } else if (currentStep === 'nyc') {
-    flyToCoords(currentStep)
+    changeVisuals(currentStep)
   } else if (currentStep === 'nyc-brooklyn') {
-    flyToCoords(currentStep)
+    changeVisuals(currentStep)
   } else if (currentStep === 'nyc-queens') {
-    flyToCoords(currentStep)
+    changeVisuals(currentStep)
   } else if (currentStep === 'nyc-manhattan-bronx') {
-    flyToCoords(currentStep)
+    changeVisuals(currentStep)
   } else if (currentStep === 'la-1') {
-    flyToCoords(currentStep)
+    changeVisuals(currentStep)
   } else if (currentStep === 'fl-1') {
-    flyToCoords(currentStep)
+    changeVisuals(currentStep)
   } else if (currentStep === 'hou-1') {
-    flyToCoords(currentStep)
+    changeVisuals(currentStep)
   } else if (currentStep === 'minneapolis') {
-    flyToCoords(currentStep)
+    changeVisuals(currentStep)
   }
 }
 
 function updateMapBack(el) {
-  //   console.log(el)
+  console.log(el)
+  //   const newNameRaw = data[i].birthplace;
+  //   $countryHeaderLarge.text(`${newNameRaw.replace(/_/g, ' ')}`);
+  //   $countryHeaderSmall.text(`${newNameRaw.replace(/_/g, ' ')}`);
+
+  //   const zoomLevel = data[i].Name.includes('NYC') ? 13 : 9;
+  const zoomLevel = 9
 
   function flyBackToCoords(prevStep) {
     const destination = tourCoordinates.filter(item => item.name === prevStep)[0]
@@ -225,9 +312,6 @@ function updateMapBack(el) {
     })
   }
   const prevStep = el.getAttribute('data-previous-step')
-
-  //   console.log(el)
-  //   console.log(prevStep)
 
 
   if (prevStep === 'usa') {
@@ -255,50 +339,29 @@ function updateMapBack(el) {
 
 function setupEnterView() {
 
-
-  window.onscroll = function () {
-    myFunction()
-  };
-
-  function myFunction() {
-    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-      scrollMarker = false;
+  function stopTour() {
+    if (document.body.scrollTop > 1 || document.documentElement.scrollTop > 1) {
+      clearInterval(mapInterval)
+      console.log('cleared')
+      scrollMarker = true;
       d3.select('.intro__scroll-cue').classed('hidden', true)
       $mapIntro.on('load', e => {
-        $mapIntro.flyTo({}).on('moveend', () => {})
+        $mapIntro.zoom = +$mapIntro.getZoom() - 0.1
+        console.log('stopping fly')
       })
-      $mapIntro.zoom = +$mapIntro.getZoom() - 0.1
+
     } else {
       d3.select('.intro__scroll-cue').classed('hidden', false)
     }
   }
 
+  window.onscroll = function () {
+    stopTour()
+  };
+
+
+
   d3.select('.tour-step:nth-child(2)').classed('ux__fade-intro-txt', true)
-
-
-
-  enterView({
-    selector: '.ux__fade-intro-txt',
-    enter(el) {},
-    exit(el) {
-      console.log('exited')
-    },
-    progress(el, progress) {
-      //   console.log(progress)
-      d3.select('.intro__cover-text').style('opacity', `${1-progress*2}`)
-      $mapIntro
-        .on('moveend', () => {})
-        .flyTo({
-          pitch: `${60-(progress*60)}`
-        })
-
-      //   if (progress === 0) {
-      //     // scrollMarker = true
-      //   }
-    },
-    offset: 0, // enter at middle of viewport
-    once: false, // trigger just once
-  });
 
 
 
@@ -311,22 +374,12 @@ function setupEnterView() {
       updateMapBack(el)
     },
     progress(el, progress) {
+      pitchMap(el, progress)
       //   el.style.opacity = progress;
     },
-    offset: 0.4, // enter at middle of viewport
+    offset: 0, // enter at middle of viewport
     once: false, // trigger just once
   });
-
-  enterView({
-    selector: '.short-story',
-    enter(el) {
-      //   console.log(el)
-    },
-    exit(el) {
-      //   console.log(el)
-    }
-  })
-
 
 }
 
@@ -347,22 +400,30 @@ function setupExploreMapInteraction() {
       const thisCountry = d.birthplace;
 
       //   $mapExplore
-      d3.select('div.explore__viz')
+      d3.select('div.intro__cover-viz')
         .select(`.marker.${thisCountry}`).classed('showMarker', true)
 
       $mapExplore.setLayoutProperty('Birthplace names', 'visibility', 'none');
     })
     .on('mouseleave', d => {
       const thisCountry = d.birthplace;
-      d3.select('div.explore__viz')
+      d3.select('div.intro__cover-viz')
         .select(`.marker.${thisCountry}`).classed('showMarker', false)
 
       $mapExplore.setLayoutProperty('Birthplace names', 'visibility', 'visible');
     })
     .on('click', d => {
-      const thisCountry = d.birthplace;
-      d3.select('div.explore__viz')
-        .select(`.marker.${thisCountry}`).classed('showMarker', true)
+
+      $mapIntro.flyTo({
+        center: [+d.X, +d.Y],
+        speed: 1,
+        zoom: 9
+      })
+      d3.select('div.intro__cover-viz')
+        .select(`.marker.${thisCountry}`).classed('showMarker', false)
+      //   const thisCountry = d.birthplace;
+      //   d3.select('div.intro__cover-viz')
+      //     .select(`.marker.${thisCountry}`).classed('showMarker', true)
     })
 
 
@@ -373,7 +434,7 @@ function setupExploreMapInteraction() {
 
     new mapboxgl.Marker(el)
       .setLngLat([+marker.X, +marker.Y])
-      .addTo($mapExplore);
+      .addTo($mapIntro);
   });
 }
 
@@ -417,8 +478,8 @@ function init() {
     .then(data => animateIntro(data))
     // .then(data => nestData(data))
     // .then(() => $mapExplore = makeMaps.makeExploreMap('explore'))
-    // .then(() => setupExploreMapInteraction())
-    .then(() => setupEnterView())
+    .then(() => setupExploreMapInteraction())
+  // .then(() => setupEnterView())
 }
 
 export default {

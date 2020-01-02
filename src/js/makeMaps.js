@@ -29,13 +29,20 @@ function makeMapUnexpected(mapCoordinates, container, data) {
   const $mapUnexpected = new mapboxgl.Map({
     // TODO Ask russell: Why do I need to return this map object if I declared it here? It's a global object, so shouldn't its value remain declared in the upper scope?
     container: `map-${container}`,
-    center: [mapCoordinates.X1, mapCoordinates.Y1],
-    maxZoom: 16,
-    pitch: 60,
-    dragPan: false,
-    scrollZoom: false,
+    // center: [mapCoordinates.X1, mapCoordinates.Y1],
+    center: [-104.90465, 39.68594],
+    // maxZoom: 16,
+    maxZoom: 14,
+    minZoom: 3,
+    // pitch: 60,
+    dragPan: true,
+    scrollZoom: true,
     style: 'mapbox://styles/dock4242/ck43bzz4f01461cl4ri5e5ogn',
-    zoom: 11,
+    maxBounds: [
+      [-180, 0],
+      [-40, 75]
+    ],
+    // zoom: 11,
   });
 
   //   if (container !== 'intro') setupFlyover($mapUnexpected, mapCoordinates);

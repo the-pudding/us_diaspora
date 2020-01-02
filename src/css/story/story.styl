@@ -151,6 +151,7 @@ main
         flex-direction: column
         transition transform 0.4s;
         position absolute
+        cursor pointer
 
         .button-list
             overflow: scroll            
@@ -165,15 +166,17 @@ main
         .nav-title
             color white
             font-weight: 800
+            font-size: 18px
+            text-decoration: underline
 
 
-    // &__nav-bar:hover        
-    //     transform: translateX(0)   
+    &__nav-bar:hover        
+        transform: translateX(0)   
     
     &__expand-tab
         margin auto
         transform translate(100%, 0)
-        visibility: hidden
+        // visibility: hidden
         position: absolute
         bottom 50%
         right 1%
@@ -261,8 +264,8 @@ main
 .nbhd-subhed   
     font-size 14px 
 
-.no-scroll
-    overflow hidden
+// .no-scroll
+//     overflow hidden
 
 
 .mapboxgl-ctrl-bottom-right,
@@ -271,3 +274,7 @@ main
 
 .hidden
     visibility: hidden
+
+
+
+    
