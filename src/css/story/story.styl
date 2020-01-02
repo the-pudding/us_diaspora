@@ -100,16 +100,38 @@ main
 .highlight
     background red
         
-.marker {
+.marker 
+    max-width: 200px
+    background-color: white
+    visibility: hidden
 //   background-image: url('mapbox-icon.png');
-  background-color: pink
-  background-size: cover;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  cursor: pointer;
-  visibility: hidden
-}        
+//   background-color: pink
+//   background-size: cover;
+//   width: 50px;
+//   height: 50px;
+//   border-radius: 50%;
+//   cursor: pointer;
+//   visibility: hidden
+
+    .tooltip
+        &__diaspora-name
+            font-size: 24px
+            font-weight: 800
+            text-transform: uppercase
+            text-align: center
+            padding-top 1 rem
+
+        &__puma-name
+            padding 1rem
+    
+        &__triangle
+            width: 0;
+            height: 0;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-top: 10px solid #fff;
+            margin: 0 auto;
+            transform: translate(0, 100%);
 
 .showMarker
     visibility: visible
@@ -170,8 +192,8 @@ main
             text-decoration: underline
 
 
-    &__nav-bar:hover        
-        transform: translateX(0)   
+    // &__nav-bar:hover        
+        // transform: translateX(0)   
     
     &__expand-tab
         margin auto

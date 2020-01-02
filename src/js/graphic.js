@@ -399,18 +399,66 @@ function setupExploreMapInteraction() {
     .on('mouseenter', d => {
       const thisCountry = d.birthplace;
 
-      //   $mapExplore
+      console.log($mapIntro.queryRenderedFeatures().filter(item => item.sourceLayer === 'only_pumas_w_diasporas-4hi77s'))
+
+      const visibleFeatures = $mapIntro.queryRenderedFeatures().filter(item => item.sourceLayer === 'only_pumas_w_diasporas-4hi77s')
+
+      var popup = new mapboxgl.Popup({
+        closeButton: false
+      });
+
+      visibleFeatures.forEach(feature => {
+        // const prop = feature.properties;
+        // const item = document.createElement('a');
+        // // item.href = prop.wikipedia;
+        // // item.target = '_blank';
+        // item.textContent = prop.Name +
+        // item.addEventListener('mouseover', function() {
+        // // Highlight corresponding feature on the map
+        popup
+          .setLngLat(feature.geometry.coordinates)
+          .setText(
+            feature.properties.Name
+          )
+          .addTo($mapIntro);
+
+      })
+
+      //   console.log($mapIntro.querySourceFeatures('coordinates_-_unique_coordina-4abjzt'))
+      //   .filter(item => item.sourceLayer === 'coordinates_-_unique_coordina-4abjzt'))
+
+
+      //   const tooltipBump = d3.select(`.marker.${thisCountry}`).node().offsetHeight / 2 //include height of triangle at bottom
+
+      //   const originalTransformTranslate = d3.select(`.marker.${thisCountry}`).style('transform')
+      //   const originalXTranslate = originalTransformTranslate.split('translate')[2].split('px, ')[0].replace('(', '')
+      //   const originalYTranslate = originalTransformTranslate.split('translate')[2].split('px, ')[1].replace('px)', '')
+
+      //   const newYTranslate = originalYTranslate - tooltipBump
+
+      //   const newTransformString = `translate(-50%, -50%) translate(${originalXTranslate}px, ${newYTranslate}px)`
+      //   const originalTransformString = d3.select(`.marker.${thisCountry}`).style('transform')
+
+      //   console.log(`${d.birthplace} bump: ${tooltipBump}`)
+      //   console.log(`${d.birthplace} y translate original: ${originalYTranslate}`)
+      //   console.log(`${d.birthplace} y translate new: ${newYTranslate}`)
+      //   console.log(`old string: ${originalTransformString}`)
+      //   console.log(`new string: ${newTransformString}`)
+
+
+      //   d3.select(`.marker.${thisCountry}`).attr('transform', `${newTransformString}`)
+
+
       d3.select('div.intro__cover-viz')
         .select(`.marker.${thisCountry}`).classed('showMarker', true)
 
-      $mapExplore.setLayoutProperty('Birthplace names', 'visibility', 'none');
     })
     .on('mouseleave', d => {
       const thisCountry = d.birthplace;
       d3.select('div.intro__cover-viz')
         .select(`.marker.${thisCountry}`).classed('showMarker', false)
 
-      $mapExplore.setLayoutProperty('Birthplace names', 'visibility', 'visible');
+      //   $mapExplore.setLayoutProperty('Birthplace names', 'visibility', 'visible');
     })
     .on('click', d => {
 
@@ -420,7 +468,7 @@ function setupExploreMapInteraction() {
         zoom: 9
       })
       d3.select('div.intro__cover-viz')
-        .select(`.marker.${thisCountry}`).classed('showMarker', false)
+        .selectAll(`.marker`).classed('showMarker', false)
       //   const thisCountry = d.birthplace;
       //   d3.select('div.intro__cover-viz')
       //     .select(`.marker.${thisCountry}`).classed('showMarker', true)
@@ -429,13 +477,49 @@ function setupExploreMapInteraction() {
 
   // Creating mapbox markers
   rawData.forEach(marker => {
+
     const el = document.createElement('div');
     el.className = `marker ${marker.birthplace}`;
+
+    d3.select(el)
+      .append('div')
+      .attr('class', `tooltip__diaspora-name ${marker.birthplace}`)
+      .text(`${marker.birthplace.replace(/_/g, ' ')}`)
+
+    d3.select(el)
+      .append('div')
+      .attr('class', `tooltip__puma-name ${marker.Name}`)
+      .text(`${marker.Name.replace(/PUMA/g, '')}`)
+
+    d3.select(el)
+      .append('div')
+      .attr('class', `tooltip__triangle ${marker.Name}`)
+
+
+    // const elDiaspora = document.createElement('div');
+    // elDiaspora.className = `tooltip__diaspora-name ${marker.birthplace}`
+    // elDiaspora.innerHTML(`${marker.birthplace}`)
+
+    // const elPUMA = document.createElement('div');
+    // elPUMA.className = `tooltip__puma-name ${marker.birthplace}`
+    // elPUMA.innerHTML(`${marker.Name.replace(/PUMA/g, '')}`)
+
+    // el.appendChild(elDiaspora)
+    // el.appendChild(elPUMA)
+
+
 
     new mapboxgl.Marker(el)
       .setLngLat([+marker.X, +marker.Y])
       .addTo($mapIntro);
+
+
   });
+
+
+  //   const tooltipBump = d3.select('.marker.Brazil').node().offsetHeight / 2 - 20 //include height of triangle at bottom
+
+
 }
 
 

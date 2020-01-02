@@ -21,6 +21,7 @@ function formatPUMA(puma) {
 
 function makeMapUnexpected(mapCoordinates, container, data) {
 
+
   //   d3.select('html').classed('no-scroll', true)
 
   mapboxgl.accessToken =
@@ -44,6 +45,21 @@ function makeMapUnexpected(mapCoordinates, container, data) {
     ],
     // zoom: 11,
   });
+
+  $mapUnexpected.on('load', () => {
+
+    // console.log($mapUnexpected.getSource('composite'))
+    // console.log($mapUnexpected.style.sourceCaches)
+    console.log($mapUnexpected.getStyle().sources)
+
+    // $mapUnexpected.addSource('composite', {
+    //   'type': 'vector',
+    //   'url': 'mapbox://dock4242.djhtixgc'
+    // });
+
+
+
+  })
 
   //   if (container !== 'intro') setupFlyover($mapUnexpected, mapCoordinates);
 
