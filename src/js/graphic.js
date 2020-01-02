@@ -66,6 +66,8 @@ function setupDOM() {
   $countryHeaderLarge = d3.select('.country-title__suffix')
   $countryHeaderSmall = d3.select('.subhed-country')
 
+  //   d3.select('.mapboxgl-canvas').on('click')
+
 
   d3.select('.explore__expand-tab').on('click', () => {
 
@@ -427,7 +429,7 @@ function setupExploreMapInteraction() {
           .setLngLat(feature.geometry.coordinates)
           .setHTML(
             `<div class='tooltip__diaspora-name ${feature.properties.birthplace}'>${feature.properties.birthplace}</div>
-            <div class='tooltip__puma-name'>${feature.properties.Name}</div>`
+            <div class='tooltip__puma-name'>${feature.properties.Name.replace(/PUMA/g,'')}</div>`
           )
           .addTo($mapIntro);
 

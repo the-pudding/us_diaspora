@@ -111,6 +111,7 @@ function makeMapUnexpected(mapCoordinates, container, data) {
 
   //   });
 
+  $mapUnexpected.addControl(new mapboxgl.NavigationControl());
 
   return $mapUnexpected;
 }
