@@ -4,7 +4,7 @@
   "description": "Americans are a nation of immigrants.",
   "site": "https://pudding.cool",
   "siteName": "The Pudding",
-  "url": "https://pudding.cool/2019/09/diaspora/",
+  "url": "https://pudding.cool/2020/01/diaspora/",
   "keywords": "diaspora immigration pudding data visualization",
   "imgFacebook": "https://pudding.cool/year/month/name/assets/social/social-facebook.jpg",
   "imgTwitter": "https://pudding.cool/year/month/name/assets/social/social-twitter.jpg",
@@ -18,6 +18,6 @@
     "url": "https://pudding.cool/author/isabel-carter",
     "twitterHandle": "@isabel___carter"
   },
-  "analytics": "",
+  "analytics": "UA-90567923-1",
   "lorem": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mollis neque sit amet sollicitudin vehicula. Maecenas fringilla mi non lacus mattis elementum. Curabitur dignissim faucibus justo."
 }
