@@ -1,13 +1,13 @@
 {
-  "title": "Today's American Diasporas",
+  "title": "America's Diasporas",
   "countryTitle": "CANADA",
   "description": "America has often been called a nation of immigrants. Here's where they've settled.",
   "site": "https://pudding.cool",
   "siteName": "The Pudding",
   "url": "https://pudding.cool/2020/01/diaspora/",
   "keywords": "diaspora immigration pudding data visualization",
-  "imgFacebook": "https://pudding.cool/year/month/name/assets/social/social-facebook.jpg",
-  "imgTwitter": "https://pudding.cool/year/month/name/assets/social/social-twitter.jpg",
+  "imgFacebook": "https://pudding.cool/2020/01/diaspora/assets/social/social-facebook.jpg",
+  "imgTwitter": "https://pudding.cool/2020/01/diaspora/assets/social/social-twitter.jpg",
   "author1": {
     "name": "Ilia Blinderman",
     "url": "https://pudding.cool/author/ilia-blinderman",
