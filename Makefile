@@ -24,6 +24,6 @@ aws-htmljs:
 	aws s3 cp dist/main.js s3://pudding.cool/2020/01/diaspora/main.js
 
 aws-cache:
-	aws cloudfront create-invalidation --distribution-id E13X38CRR4E04D --paths '/2019/01/diaspora*'	
+	aws cloudfront create-invalidation --distribution-id E13X38CRR4E04D --paths '/2020/01/diaspora*'	
 
 pudding: aws-assets aws-htmljs aws-cache archive
