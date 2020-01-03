@@ -51,7 +51,7 @@ function makeMapUnexpected(mapCoordinates, container, data) {
 
     // console.log($mapUnexpected.getSource('composite'))
     // console.log($mapUnexpected.style.sourceCaches)
-    console.log($mapUnexpected.getStyle().sources)
+    // console.log($mapUnexpected.getStyle().sources)
 
     // $mapUnexpected.addSource('composite', {
     //   'type': 'vector',
@@ -192,12 +192,12 @@ function makeExploreMap(container) {
     if (currentPUMA != undefined) {
 
       const pumaData = currentPUMA.properties.Name
-      console.log(pumaData)
+      //   console.log(pumaData)
 
       const pumaDataFormatted = formatPUMA(pumaData)
       //   console.log(pumaDataFormatted)
       const tooltipSubhed = `<p class='nbhd-subhed'>${pumaDataFormatted}</p>`;
-      console.log(e.lngLat)
+      //   console.log(e.lngLat)
 
       popupUnexpected
         .setLngLat(e.lngLat)

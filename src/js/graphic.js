@@ -318,7 +318,7 @@ function pitchMap(el, progress) {
 
 
 function updateMap(el) {
-  console.log(el)
+  //   console.log(el)
 
   function changeVisuals(currentStep) {
 
@@ -354,7 +354,7 @@ function updateMap(el) {
 }
 
 function updateMapBack(el) {
-  console.log(el)
+  //   console.log(el)
   //   const newNameRaw = data[i].birthplace;
   //   $countryHeaderLarge.text(`${newNameRaw.replace(/_/g, ' ')}`);
   //   $countryHeaderSmall.text(`${newNameRaw.replace(/_/g, ' ')}`);
@@ -401,12 +401,12 @@ function setupEnterView() {
   function stopTour() {
     if (document.body.scrollTop > 1 || document.documentElement.scrollTop > 1) {
       clearInterval(mapInterval)
-      console.log('cleared')
+      //   console.log('cleared')
       scrollMarker = true;
       d3.select('.intro__scroll-cue').classed('hidden', true)
       $mapIntro.on('load', e => {
         $mapIntro.zoom = +$mapIntro.getZoom() - 0.1
-        console.log('stopping fly')
+        // console.log('stopping fly')
       })
 
     } else {
@@ -467,8 +467,8 @@ function setupExploreMapInteraction() {
 
       const thisCountryFeatures = visibleFeatures.filter(item => item.properties.birthplace.replace(/ /g, '_').includes(thisCountry))
 
-      console.log(thisCountry)
-      console.log(thisCountryFeatures)
+      //   console.log(thisCountry)
+      //   console.log(thisCountryFeatures)
       const popup = new mapboxgl.Popup({
         closeButton: false
       });
