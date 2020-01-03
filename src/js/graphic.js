@@ -72,8 +72,19 @@ function setupDOM() {
   d3.select('.explore__expand-tab').on('click', () => {
 
     if (expandedNav === false) {
+
       d3.select('nav.explore').style('transform', 'translateX(0)')
       d3.select('.triangle-left').classed('collapsed', true)
+
+      d3.select('.method').classed('outta-sight-info', true)
+      d3.select('.method').classed('in-sight-info', false)
+
+      d3.select('.intro__blurb').classed('outta-sight-intro', true)
+      d3.select('.intro__blurb').classed('in-sight-intro', false)
+
+      d3.select('.misc-info').classed('outta-sight-info', false)
+      d3.select('.misc-info').classed('in-sight-info', true)
+
       expandedNav = true
     } else if (expandedNav === true) {
       d3.select('nav.explore').style('transform', 'translateX(-95%)')
@@ -85,27 +96,72 @@ function setupDOM() {
   })
 
 
-  d3.select('.intro__cover-text').on('click', () => {
-    d3.select('.intro__cover-text').classed('slide-out-left', true)
-    d3.select('.masthead').classed('slide-out-right', true)
-    d3.select('html').classed('no-scroll', false)
+  //   d3.select('.intro__cover-text').on('click', () => {
+  //     d3.select('.intro__cover-text').classed('slide-out-left', true)
+  //     d3.select('.masthead').classed('slide-out-right', true)
+  //     d3.select('html').classed('no-scroll', false)
+
+  //   })
+
+  //   d3.select('.tour-step').on('click', () => {
+  //     d3.select('.intro__cover-text').classed('slide-out-left', true)
+  //     d3.select('.masthead').classed('slide-out-right', true)
+  //     d3.select('html').classed('no-scroll', false)
+  //     window.scrollTo(0, 0);
+
+  //   })
+
+
+  d3.selectAll('.blurb').on('click', () => {
+
+    d3.select('.intro__blurb').classed('in-sight-intro', false)
+    d3.select('.intro__blurb').classed('outta-sight-intro', true)
+
+    d3.select('.misc-info').classed('outta-sight-info', false)
+    d3.select('.misc-info').classed('in-sight-info', true)
 
   })
 
-  d3.select('.tour-step').on('click', () => {
-    d3.select('.intro__cover-text').classed('slide-out-left', true)
-    d3.select('.masthead').classed('slide-out-right', true)
-    d3.select('html').classed('no-scroll', false)
-    window.scrollTo(0, 0);
 
+  d3.select('.misc-info__info').on('click', () => {
+
+    d3.select('.misc-info').classed('in-sight-info', false)
+    d3.select('.misc-info').classed('outta-sight-info', true)
+
+
+    d3.select('.intro__blurb').classed('in-sight-intro', true)
+    d3.select('.intro__blurb').classed('outta-sight-intro', false)
+
+    // d3.select('.intro__blurb').style('top', '50%')
   })
 
 
-  d3.select('html').on('click', () => {
-    d3.select('.intro__blurb')
-      .style('top', '-50%')
-    //   .style('transform', 'translate(-200%,-200%)')
+  d3.select('.misc-info__method').on('click', () => {
+
+    d3.select('.misc-info').classed('in-sight-info', false)
+    d3.select('.misc-info').classed('outta-sight-info', true)
+
+    d3.select('.method').classed('in-sight-intro', true)
+    d3.select('.method').classed('outta-sight-intro', false)
+
+
+    // d3.select('.intro__blurb').style('top', '50%')
   })
+
+
+
+  d3.select('.method').on('click', () => {
+
+    d3.select('.misc-info').classed('in-sight-info', true)
+    d3.select('.misc-info').classed('outta-sight-info', false)
+
+    d3.select('.method').classed('in-sight-intro', false)
+    d3.select('.method').classed('outta-sight-intro', true)
+
+
+    // d3.select('.intro__blurb').style('top', '50%')
+  })
+
 
 
 }

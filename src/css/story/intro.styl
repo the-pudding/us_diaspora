@@ -18,12 +18,12 @@
 
     &__blurb
         position: absolute
-        top 50%
+        // top 50%
         width 80vw
         background-color: #292c3c
         left 50%
         transform: translate(-50%,-50%)
-        z-index 10001
+        z-index 20000
         color white
         -webkit-box-shadow: 4px 4px 6px 0px rgba(14,14,14,0.75);
         -moz-box-shadow: 4px 4px 6px 0px rgba(14,14,14,0.75);
@@ -95,6 +95,35 @@
     &__cover-viz
         width 100%
         height 100vh
+
+        .misc-info
+            position: fixed
+            bottom 0%
+            width 8vw
+            margin 0 auto
+            background-color: #292c3c
+            height 5vh
+            left 50%
+            // transform: translate(-50%,0)
+            z-index: 100000
+            padding 0.25rem
+            -webkit-box-shadow: 2px 0px 14px -2px rgba(0,0,0,0.75);
+            -moz-box-shadow: 2px 0px 14px -2px rgba(0,0,0,0.75);
+            box-shadow: 2px 0px 14px -2px rgba(0,0,0,0.75);
+            border-radius: 3px
+            transition 0.35s ease 0s
+            // visibility: hidden
+
+            // border-top 0.5px solid gray
+            // border-left 0.5px solid gray
+            // border-right 0.5px solid gray
+
+            &__info
+            &__method
+                width 47%
+                display: inline
+                cursor: pointer
+                // stroke gray
         // pointer-events: none
 
     &__copy-container
@@ -242,85 +271,76 @@
 .slide-out-left
     transform: translate(-100%,0)
 
-// .intro
-//     display flex
-//     flex-direction row
-//     height 100vh
-//     width 100%
+.outta-sight-intro
+    top -50%
 
-//     &__cover-left
-//         margin 0 auto
-//         padding 6rem 1rem 3rem 1rem
-//         background-color $thisBlue
-//         width 50% 
-//         display flex
-//         justify-content space-evenly
-//         flex-direction column
+.in-sight-intro
+    top 50%
+
+.outta-sight-info
+    transform: translate(-50%, 100%);
+
+.in-sight-info
+    transform: translate(-50%, 0%);
+
+.author
+    font-family: 'National 2 Web';
+    color: #fff;
+    text-align: justify;
+    padding-right: 2rem;
+    padding-left: 2rem
+    font-size: 14px;
+    text-align: center
+    margin-bottom 0rem
+    padding-bottom: 0rem
+    margin-top 1rem
+    .author-name
+        a        
+            border-bottom: 1px solid $thisPink
+            color: $thisPink
+            font-weight: 800
+
         
-    
-//         .hed
-//             max-width 60rem
-//             margin 0 auto
-//             text-align center
-//             font-family $national
-//             color white    
-                    
-//         .country-hed-container
-//             text-align center
-//             margin 0
+
+.method
+    position: absolute
+    // top 50%
+    width 80vw
+    background-color: #292c3c
+    left 50%
+    transform: translate(-50%,-50%)
+    z-index 20000
+    color white
+    -webkit-box-shadow: 4px 4px 6px 0px rgba(14,14,14,0.75);
+    -moz-box-shadow: 4px 4px 6px 0px rgba(14,14,14,0.75);
+    box-shadow: 4px 4px 6px 0px rgba(14,14,14,0.75);
+    // transition transform 0.4s;
+    transition top 1s ease 0s
+    cursor pointer    
+
+.method-title
+    text-align: center
+    color: $thisPink
+    font-weight: 800
+    font-size 16px
+    margin 0 2rem 0 2rem
+    padding 2rem 0 0 0
 
 
-//         .country-hed
-//             max-width 60rem
-//             margin 0 auto
-//             text-align left
-//             font-family $national
-//             color $thisSalmon
-//             font-size: 72px
-//             font-weight: 800
-//             border-bottom: 3px dashed $thisSalmon
-        
-//         .dek
-//             max-width $column-width
-//             margin 0 auto
-//             text-align left
-            
-//         .byline
-//             max-width $column-width
-//             margin 0 auto
-//             text-align center
-//             font-family: $national
-//             color white
-//             a
-//                 color white
-//                 border-bottom: 1px solid white
-                
-            
-//         .time
-//             display block
-//             max-width $column-width
-//             font-family $national
-//             margin 0 auto
-//             margin-top 1rem
-//             text-align center
-//             color gray
-        
-//         .blurb
-//             color white
-//             font-family $tiempos
-//             max-width 60rem
-//             margin 0 auto
-//             text-align: left
+.method-text
+    font-family: 'National 2 Web';
+    color: #fff;
+    text-align: justify;
+    padding: 2rem;
+    font-size: 14px;
+    margin-top 0
+    padding-top 1rem
 
-//             .subhed-country
-//                 color $thisSalmon
-//                 border-bottom: 1px dashed $thisSalmon
-//                 font-weight: 600
-    
-//     &__right
-//         width 50%
-//         height 100%
-//         background linear-gradient(
-//             rgba(145,144,186,0.8),
-//             rgba(145,144,186,0.8)
-//         ),url(../assets/images/canada.png);
+.close-method
+    margin 0 auto
+    text-align: center
+    font-weight 800
+    text-transform: uppercase
+    font-size: 24px
+    padding-bottom: 2rem
+    color #fff

@@ -35,9 +35,10 @@
 
 
     <div class='intro__cover-viz' id='map-intro'>
-        <div class='intro__blurb'>
-            <p class='blurb-title'>America's Diasporas</p>
-            <p class='blurb-text'>America has long been called a nation of immigrants, so we began to wonder where other
+        <div class='blurb intro__blurb in-sight-intro'>
+            <p class='blurb blurb-title'>America's Diasporas</p>
+            <p class='blurb blurb-text'>America has long been called a nation of immigrants, so we began to wonder where
+                other
                 countries diasporas were located in the US.
                 Through US census data, we calculated the proportion of total foreign-born residents in each census
                 region
@@ -48,7 +49,40 @@
                 Staten
                 Island, we sought to showcase where immigrants
                 to America have settled. </p>
-            <div class='intro__button'>Click anywhere to explore</div>
+            <div class='blurb intro__button'>Click here to explore</div>
+        </div>
+        <div class='misc-info outta-sight-info'>
+            <img class='misc-info__info' src="assets\images\info.svg">
+            <img class='misc-info__method' src="assets\images\help-circle.svg">
+        </div>
+        <div class='method outta-sight-intro'>
+            <p class='method-title'>METHOD</p>
+            <p class='author'>
+                by <span class='author-name'><a href='https://pudding.cool/author/ilia-blinderman/'>Ilia
+                        Blinderman</a></span>
+                and <span class='author-name'><a href='https://pudding.cool/author/izii-carter/'>Izii
+                        Carter</a></span>
+            </p>
+            <p class='method-text'>We eagerly cite the 2018 release of IPUMS data as the bedrock of this project (Steven
+                Ruggles, Sarah Flood, Ronald Goeken, Josiah Grover,
+                Erin Meyer, Jose Pacas and Matthew Sobek. IPUMS USA: Version 9.0 [dataset]. Minneapolis, MN: IPUMS,
+                2019. https://doi.org/10.18128/D010.V9.0). Specifically,
+                we selected the following variables from the IPUMS data: YEAR (Census year), SAMPLE (IPUMS sample
+                identifier), SERIAL (Household serial number),
+                CBSERIAL (Original Census Bureau household serial number), HHWT (Household weight), CLUSTER (Household
+                cluster for variance estimation),
+                STATEFIP (State (FIPS code)), PUMA (Public Use Microdata Area), STRATA (Household strata for variance
+                estimation), GQ (Group quarters status),
+                PERNUM (Person number in sample unit), PERWT (Person weight), BPL (Birthplace [general version]), and
+                BPLD (Birthplace [detailed version]). For each PUMA, we
+                calculated the percentage of each foreign-born population (e.g., for Brazil, Canada, Nigeria, etc.). We
+                then examined each foreign-born population, and found
+                the PUMA that contained its highest percentage, using this as a proxy of diaspora presence. We happily
+                admit that this measure is not perfect, and due to the
+                variation in PUMA shape, we may have missed some important immigration hubs. Additionally, because this
+                measure exclusively focuses on foreign-born individuals,
+                second- and third-generation communities are less likely to be represented in our research.</p>
+            <div class='close-method'>CLICK TO CLOSE</div>
         </div>
         <nav class='explore explore__nav-bar'>
             <div class='nab-bar nav-title'>Select country</div>
@@ -61,44 +95,7 @@
             </div>
         </nav>
     </div>
-    {{!-- <div class='intro__cover-text'>
-        <div class='progress-bar'></div>
-        <div class='cover__top'></div>
 
-        <div class='cover__middle'>
-
-            <div class='title'>
-                <div class='country-title__prefix'>The United States of</div>
-                <div class='country-title__suffix'></div>
-                <p class='intro__byline'>By
-                    <a href='{{meta.author1.url}}' target='_blank'>
-                        <strong>{{meta.author1.name}}</strong>
-                    </a> and
-                    <a href='{{meta.author2.url}}' target='_blank'>
-                        <strong>{{meta.author2.name}}</strong>
-                    </a>
-                </p>
-
-            </div>
-
-            <div class='blurb-container'>
-                <div class='blurb-text'>America has long been called a nation of immigrants.</div>
-                <div class='blurb-text'>Here is where those of us </div>
-                <div class='blurb-text'>
-                    <span class='subhed-country'>Canada</span>
-                    call our home.
-                </div>
-            </div>
-        </div>
-
-
-
-
-
-    </div> --}}
-    {{!-- <div class='intro__scroll-cue'>
-        <div class='scroll-cue-text'>⇩ Scroll ⇩</div>
-    </div> --}}
 
 
 
