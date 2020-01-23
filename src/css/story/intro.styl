@@ -25,7 +25,8 @@
         position: absolute
         // top 50%
         width 80vw
-        background-color: #292c3c
+        // background-color: #292c3c
+        background-color: #1D1D1D
         left 50%
         transform: translate(-50%,-50%)
         z-index 20000
@@ -71,10 +72,16 @@
 
 
     &__byline
-        text-align: right
+        text-align: left
         font-family $national
         color white 
-        visibility hidden
+        display inline
+        font-size: 14px
+        margin-right: 2rem
+        // visibility hidden
+        @media (max-width: 550px)
+            margin-right 0.5rem
+            font-size: 12px
 
         a
             color white
@@ -108,36 +115,43 @@
         .misc-info
             position: fixed
             bottom 0%
-            width 8vw
+            // width 8vw
+            width auto
             margin 0 auto
-            background-color: #292c3c
-            height 5vh
-            left 50%
+            // background-color: #292c3c
+            background-color: #1d1d1d
+            // height 5vh
+            height auto
+            // left 50%
+            right 0%
             // transform: translate(-50%,0)
             z-index: 100000
-            padding 0.25rem
+            padding 1rem
             -webkit-box-shadow: 2px 0px 14px -2px rgba(0,0,0,0.75);
             -moz-box-shadow: 2px 0px 14px -2px rgba(0,0,0,0.75);
             box-shadow: 2px 0px 14px -2px rgba(0,0,0,0.75);
             border-radius: 3px
             transition 0.35s ease 0s
+            font-family: $national
+            // transform: translate(0%, 0%);
+            
             @media (max-width: 550px)
-                width 20vw
-                margin-bottom 0.4rem
-            // visibility: hidden
-
-            // border-top 0.5px solid gray
-            // border-left 0.5px solid gray
-            // border-right 0.5px solid gray
+                width 100%
+                margin-bottom 0
 
             &__info
             &__method
-                width 47%
-                height 100%
+                text-decoration: underline
+                color white
                 display: inline
+                font-size: 14px
+                // width 47%
+                // height 100%
+                // display: inline
                 cursor: pointer
-                // stroke gray
-        // pointer-events: none
+                @media (max-width: 550px)
+                    font-size: 12px
+
 
     &__copy-container
         max-width 40rem
@@ -163,11 +177,15 @@
 
 .masthead
     z-index: 1000;
-    position: absolute;
+    // position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    // width: 100%;
+    width: 50%
+    // height: 
     transition: transform 0.35s ease-out;
+    @media (max-width: 550px)
+                display: none
 
     a
         display: block;
@@ -180,6 +198,56 @@
         fill-opacity: .8;
         display: block;
         width: 100%;
+
+.masthead-mob
+    z-index: 1000;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    display: none;
+    background-color: #1D1D1D
+    width: 100%
+    height: 5rem
+
+    a
+        border: none;
+        max-width: 9rem;
+        margin: 1rem auto;
+        @media (max-width 550px)
+            border-bottom: none;
+            border-bottom-color: transparent
+    
+        #wordmark
+            fill: #fff;
+            opacity: 1;
+            width: 30%;
+            top: 50%;
+            position: absolute;
+            transform: translate(0, -50%);          
+            @media (max-width 550px)
+                border-bottom: none;
+                border-bottom-color: transparent
+                fill: #fff;
+                opacity: 1;
+
+    @media (max-width 550px)
+        display block
+        border none
+        border-bottom-color: transparent
+        padding 0.5rem
+    
+    .mob-copy
+        font-family: 'National 2 Web';
+        color: #fff;
+        width: 50%;
+        position: absolute;
+        right: 0%;
+        line-height: 1.1;
+        transform: translate(0, -50%);
+        top: 50%;
+
+
+
 
 .cover
     // &__top
@@ -301,12 +369,12 @@
     top 50%
 
 .outta-sight-info
-    transform: translate(-50%, 100%);
+    transform: translate(100%, 0%);
     @media (max-width: 550px)
         transform: translate(-50%, 120%);
 
 .in-sight-info
-    transform: translate(-50%, 0%);
+    transform: translate(0%, 0%);
 
 .author
     font-family: 'National 2 Web';
@@ -319,6 +387,7 @@
     margin-bottom 0rem
     padding-bottom: 0rem
     margin-top 1rem
+    display none
     @media (max-width: 550px)
         margin-top 0
         font-size 12px
@@ -333,7 +402,8 @@
 .method
     position: absolute
     width 80vw
-    background-color: #292c3c
+    // background-color: #292c3c
+    background-color: #1D1D1D
     left 50%
     transform: translate(-50%,-50%)
     z-index 20000
@@ -381,13 +451,14 @@
         margin-bottom 0.1rem
 
 .close-method
+    color #808080
     margin 0 auto
     text-align: center
     font-weight 800
     text-transform: uppercase
     font-size: 24px
     padding-bottom: 2rem
-    color #fff
+    // color #fff
     @media (max-width: 550px)
         padding-bottom 0.25rem
         padding-top 0
