@@ -27,7 +27,7 @@ let data;
 let nestedData;
 
 let mapInterval;
-let expandedNav = false;
+let expandedNav = true;
 let scrollMarker = false;
 let lastCountry;
 let flying;
@@ -101,7 +101,7 @@ function setupDOM() {
     if (expandedNav === false) {
       d3.select('nav.explore').style('transform', 'translateX(0)')
       expandedNav = true
-      d3.select('.misc-info__mob-country-expander').html("Hide countries <div id='triangle-left'></div>")
+      d3.select('.misc-info__mob-country-expander').html("Hide countries list <div id='triangle-left'></div>")
     } else if (expandedNav === true) {
       d3.select('nav.explore').style('transform', 'translateX(-95%)')
       d3.select('.misc-info__mob-country-expander').html("Select a country <div id='triangle'></div>")
