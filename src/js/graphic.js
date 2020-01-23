@@ -5,6 +5,7 @@ import enterView from 'enter-view';
 // import turf from '@turf/turf'
 // import turfHelpers from '@turf/helpers'
 import makeMaps from './makeMaps';
+import isMobile from './utils/is-mobile';
 
 
 let $countryHeaderLarge;
@@ -93,6 +94,19 @@ function setupDOM() {
     }
 
 
+  })
+
+
+  d3.select('.misc-info__mob-country-expander').on('click', () => {
+    if (expandedNav === false) {
+      d3.select('nav.explore').style('transform', 'translateX(0)')
+      expandedNav = true
+      d3.select('.misc-info__mob-country-expander').html("Hide countries <div id='triangle-left'></div>")
+    } else if (expandedNav === true) {
+      d3.select('nav.explore').style('transform', 'translateX(-95%)')
+      d3.select('.misc-info__mob-country-expander').html("Select a country <div id='triangle'></div>")
+      expandedNav = false
+    }
   })
 
 
@@ -443,6 +457,8 @@ function setupEnterView() {
 }
 
 function setupExploreMapInteraction() {
+
+  //   if(isMobile.any()){}
 
   // Add sidebar buttons 
   const $countryButtons = d3.select('nav.explore__nav-bar')
