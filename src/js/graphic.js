@@ -97,17 +97,20 @@ function setupDOM() {
   })
 
 
-  d3.select('.misc-info__mob-country-expander').on('click', () => {
-    if (expandedNav === false) {
-      d3.select('nav.explore').style('transform', 'translateX(0)')
-      expandedNav = true
-      d3.select('.misc-info__mob-country-expander').html("Hide countries list <div id='triangle-left'></div>")
-    } else if (expandedNav === true) {
-      d3.select('nav.explore').style('transform', 'translateX(-95%)')
-      d3.select('.misc-info__mob-country-expander').html("Select a country <div id='triangle'></div>")
-      expandedNav = false
-    }
-  })
+
+  // d3.select('.misc-info__mob-country-expander').on('click', () => {
+  //   if (expandedNav === false) {
+  //     d3.select('nav.explore').style('transform', 'translateX(0)')
+  //     expandedNav = true
+  //     d3.select('.misc-info__mob-country-expander').html("Hide countries <div id='triangle-left'></div>")
+  //   } else if (expandedNav === true) {
+  //     d3.select('nav.explore').style('transform', 'translateX(-95%)')
+  //     d3.select('.misc-info__mob-country-expander').html("Select a country <div id='triangle'></div>")
+  //     expandedNav = false
+  //   }
+  // })
+
+
 
 
   //   d3.select('.intro__cover-text').on('click', () => {
@@ -126,15 +129,15 @@ function setupDOM() {
   //   })
 
 
-  d3.selectAll('.blurb').on('click', () => {
+  // d3.selectAll('.blurb').on('click', () => {
 
     d3.select('.intro__blurb').classed('in-sight-intro', false)
     d3.select('.intro__blurb').classed('outta-sight-intro', true)
-
+    d3.select('.triangle-left').classed('collapsed', true)
     d3.select('.misc-info').classed('outta-sight-info', false)
     d3.select('.misc-info').classed('in-sight-info', true)
 
-  })
+  // })
 
 
   d3.select('.misc-info__info').on('click', () => {
@@ -460,7 +463,35 @@ function setupExploreMapInteraction() {
 
   //   if(isMobile.any()){}
 
-  // Add sidebar buttons 
+  // Add sidebar buttons
+
+  let selectDropdown = d3.select('.misc-info__mob-country-expander')
+  selectDropdown.selectAll("option")
+    .data(rawData)
+    .enter()
+    .append("option")
+    .text(d => d.birthplace.replace(/_/g, ' '))
+    ;
+
+  selectDropdown.insert("option").text("Find a Country").attr("selected","selected").lower();
+
+  selectDropdown.on("change",function(){
+    var newValue = selectDropdown.node().value
+    for (var item in rawData){
+      if(rawData[item].birthplace.replace(/_/g, ' ') == newValue){
+        $mapIntro.flyTo({
+          center: [+rawData[item].X, +rawData[item].Y],
+          speed: 1,
+          zoom: 9
+        })
+        d3.select('div.intro__cover-viz')
+          .selectAll(`.marker`).classed('showMarker', false)
+      }
+    }
+  })
+
+
+
   const $countryButtons = d3.select('nav.explore__nav-bar')
     .select('ul')
     .selectAll('li.country-button')
@@ -530,9 +561,6 @@ function setupExploreMapInteraction() {
       })
       d3.select('div.intro__cover-viz')
         .selectAll(`.marker`).classed('showMarker', false)
-      //   const thisCountry = d.birthplace;
-      //   d3.select('div.intro__cover-viz')
-      //     .select(`.marker.${thisCountry}`).classed('showMarker', true)
     })
 
 

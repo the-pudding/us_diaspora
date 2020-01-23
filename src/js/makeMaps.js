@@ -148,8 +148,6 @@ function makeExploreMap(container) {
     zoom: 3.5355101377334592,
   });
 
-
-
   let popupUnexpected = new mapboxgl.Popup({
     closeButton: false,
     closeOnClick: false,
