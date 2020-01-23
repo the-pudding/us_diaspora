@@ -5,13 +5,13 @@ main
 .unexpected
     &__container
         display flex
-        flex-direction: row     
-        flex-wrap: wrap;   
-        
+        flex-direction: row
+        flex-wrap: wrap;
+
 
 .short-story
     background-color $thisBlue
-    width 50vw     
+    width 50vw
 
     &__intro
         margin 0 auto
@@ -25,9 +25,9 @@ main
         .story-text
             color white
             font-size 16px
-            font-family $national   
-        
-    
+            font-family $national
+
+
     &__header
         .em-dash-border
             margin-top 0
@@ -36,7 +36,7 @@ main
             font-weight: 800
             font-family: $national
             line-height: 0
-        
+
     &__title
         font-size: 36px
         color $thisPink
@@ -51,7 +51,7 @@ main
     display: flex
     flex-direction: row
 
-    &__step-container        
+    &__step-container
         // max-width: 30%
         width 100%
         background-color: rgba(255,0,0,0,0)
@@ -70,7 +70,7 @@ main
             // border-bottom: 1px blue solid
             // justify-content: center
             align-items: center
-            font-family $national   
+            font-family $national
             color white
             background-color: rgba(255,0,0,0,0)
             padding 0 1.5rem
@@ -82,7 +82,7 @@ main
                 -webkit-box-shadow: 4px 4px 6px 0px rgba(14,14,14,0.75);
                 -moz-box-shadow: 4px 4px 6px 0px rgba(14,14,14,0.75);
                 box-shadow: 4px 4px 6px 0px rgba(14,14,14,0.75);
-            
+
 
 
 
@@ -93,14 +93,14 @@ main
         position: sticky
         top 0
 
-    
 
 
-    
+
+
 .highlight
     background red
-        
-.marker 
+
+.marker
     max-width: 200px
     background-color: white
     visibility: hidden
@@ -125,7 +125,7 @@ main
             margin 0.5rem
             border-top: 3px solid #D54273;
             padding-top 0.5rem
-    
+
         &__triangle
             width: 0;
             height: 0;
@@ -159,14 +159,15 @@ main
         width 100%
         height 100vh
 
-    &__nav-bar        
+    &__nav-bar
         z-index: 10
-        position fixed  
-        padding 1rem 1.5rem 1rem 0.5rem
-        transform: translateX(-95%)   
+        position fixed
+        overflow scroll
+        padding 1rem 1.5rem 1rem 1.5rem
+        transform: translateX(0)
         // width 20%
-        width 12rem
-        height 90%        
+        width 240px
+        height 90%
         top 5%
         left 0
         // background-color: #222746
@@ -180,16 +181,14 @@ main
         cursor pointer
         @media (max-width: 550px)
              width 8rem
+             display none
              height 70%
              top 15%
             // transform translate()
-        
+
 
         .button-list
-            overflow: scroll            
             height 100%
-            overflow-y scroll
-
             .country-button
                 font-family: $national
                 color: white
@@ -200,28 +199,38 @@ main
             @media (max-width: 550px)
                 .country-button:last-child
                     padding-bottom 5rem
-        
+
         .nav-title
             color #E33773
             font-weight: 800
-            font-size: 16px
             // text-decoration: underline
             text-transform: uppercase
-        
-        .nav-intro
+            font-family $national
+            font-size 14px
+            letter-spacing 1px
+            margin-bottom 20px
+
+        .nav-intro, .nav-intro-big
             font-size 18px
             color white
+            margin-bottom 60px
             font-family: $national
-            margin-bottom 1rem
+            line-height 1.3
             @media (max-width: 550px)
                 display: none
+        .nav-intro-big
+          font-size 24px
+          margin-bottom 30px
+          margin-top 30px
+          font-weight 600
 
 
 
 
-    // &__nav-bar:hover        
-        // transform: translateX(0)   
-    
+
+    // &__nav-bar:hover
+        // transform: translateX(0)
+
     &__expand-tab
         margin auto
         transform translate(100%, 0)
@@ -233,16 +242,17 @@ main
         @media (max-width:550px)
             display none
 
-        .triangle-left  
-            height: 2rem
-            width: 2rem
+        .triangle-left
+            height: 1.5rem
+            width: 1.5rem
+            padding 1rem
             border-bottom-right-radius: 4rem
             border-top-right-radius: 4rem
             // background #222746
             background #1D1D1D
             -webkit-box-shadow: 1px 2px 10px #171717;
             box-shadow: 10px 0 8px 0px #171717
-            
+
             // Adding movement button
             &:before,
             &:after
@@ -250,7 +260,7 @@ main
                 position: absolute;
                 background-color: white;
                 transition: transform 0.5s ease-out;
-            
+
             &:before
                 top: 15%;
                 left: 50%;
@@ -264,15 +274,15 @@ main
                 width: 70%;
                 height: 4px;
                 margin-top: -2px;
-            
+
             &.collapsed                // cursor: pointer
 
                 &:before
                     transform: rotate(90deg);
-                
+
                 &:after
-                    transform: rotate(180deg);        
- 
+                    transform: rotate(180deg);
+
 
     &__header
         font-size: 36px
@@ -299,12 +309,12 @@ main
 
     &__body
         max-width 60rem
-        margin 0 auto  
+        margin 0 auto
 
     .method-text
         font-family: $national
-        color white    
-        text-align: justify 
+        color white
+        text-align: justify
 
 .mapboxgl-popup,
 .mapboxgl-popup-content,
@@ -313,8 +323,8 @@ main
     font-family: $national
     margin 0
 
-.nbhd-subhed   
-    font-size 14px 
+.nbhd-subhed
+    font-size 14px
 
 // .no-scroll
 //     overflow hidden
@@ -329,10 +339,10 @@ main
     visibility: hidden
 
 
-.mapboxgl-ctrl-top-right    
+.mapboxgl-ctrl-top-right
     z-index: 10000
     @media (max-width: 550px)
         display none
 
 .bold
-    font-weight 800        
+    font-weight 800
