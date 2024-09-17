@@ -25,7 +25,7 @@ function makeMapUnexpected(mapCoordinates, container, data) {
   //   d3.select('html').classed('no-scroll', true)
 
   mapboxgl.accessToken =
-    'pk.eyJ1IjoiZG9jazQyNDIiLCJhIjoiY2pjazE5eTM2NDl2aDJ3cDUyeDlsb292NiJ9.Jr__XbmAolbLyzPDj7-8kQ';
+    'pk.eyJ1IjoiZG9jazQyNDIiLCJhIjoiY20xNXJ3amV0MGFsejJpb3NxZnc0eWUzdiJ9.kY_iNcKfXU63KAKlP6GOsA';
 
   const $mapUnexpected = new mapboxgl.Map({
     // TODO Ask russell: Why do I need to return this map object if I declared it here? It's a global object, so shouldn't its value remain declared in the upper scope?
@@ -119,7 +119,7 @@ function makeMapUnexpected(mapCoordinates, container, data) {
 
 function makeTourMap(container) {
   mapboxgl.accessToken =
-    'pk.eyJ1IjoiZG9jazQyNDIiLCJhIjoiY2pjazE5eTM2NDl2aDJ3cDUyeDlsb292NiJ9.Jr__XbmAolbLyzPDj7-8kQ';
+    'pk.eyJ1IjoiZG9jazQyNDIiLCJhIjoiY20xNXJ3amV0MGFsejJpb3NxZnc0eWUzdiJ9.kY_iNcKfXU63KAKlP6GOsA';
   const $mapTour = new mapboxgl.Map({
     container: `map-${container}`,
     center: [-100.13166997361526, 37.90144323731123],
@@ -136,7 +136,7 @@ function makeTourMap(container) {
 
 function makeExploreMap(container) {
   mapboxgl.accessToken =
-    'pk.eyJ1IjoiZG9jazQyNDIiLCJhIjoiY2pjazE5eTM2NDl2aDJ3cDUyeDlsb292NiJ9.Jr__XbmAolbLyzPDj7-8kQ';
+    'pk.eyJ1IjoiZG9jazQyNDIiLCJhIjoiY20xNXJ3amV0MGFsejJpb3NxZnc0eWUzdiJ9.kY_iNcKfXU63KAKlP6GOsA';
   const $mapExplore = new mapboxgl.Map({
     container: `map-${container}`,
     center: [-100.13167, 37.90144324],
